@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  body{
+    margin: 0px auto;
+    font-family: "proxima-nova",sans-serif;
+    background-color: #191525;
+  }
+  .contenedor{
+    height: 200px;
+    display: inline-flex;
+    min-width: 100%;
+    justify-content: center;
+    background-color: #3b4048;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  aspect_ratio {
+    /* background-color: #b35151; */
+    background-image: url("1080.png"); 
+    background-size: contain;
+    width: 100%;
+    width: 100vw;
+    height: 56.25vw;
+    max-height: 100vh;
+    max-width: 177.78vh;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+  height: 100%;
+  width: auto;
+ 
+}
+
+
+
+.personaje {
+   
+    /* margin: 25px; */
+    margin: 1%;
+    animation: slidein 0.5s forwards;
+    width: 25%;
+    height: 100%;
+    /* width: auto; */
+    display: flex;
+    justify-content: center;
+}
+
+</style>
+</head>
+<body>
+  <aspect_ratio>
+    <div class="personaje"> <img src="01_2.png"></div>
+    <div class="personaje"> <img src="0.png" ></div>
+<!--     -->
+<!--     -->
+  </aspect_ratio>
+
+</body>
+
+</html>
