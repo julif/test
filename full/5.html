@@ -54,16 +54,24 @@
     background-size: contain;
       }
 
+
+      #contenedor:requestFullscreen >    #aspect_ratio #fullwiev {display: none;}
+#contenedor:-moz-full-screen >     #aspect_ratio #fullwiev {display: none;} /* Firefox */
+#contenedor:-webkit-full-screen >    #aspect_ratio #fullwiev {display: none;} /* Chrome, Safari & Opera */
+#contenedor:-msRequestFullscreen >    #aspect_ratio #fullwiev {display: none;} /* IE/Edge */
     </style>
   </head>
   <body onresize="myFunction_set()">
+
     <div id="contenedor">
       <img  id="imagen_size1" src="full_background4.png">
       <div id="div_principal">
-       
+            
       
       </div>
-      <div id="aspect_ratio"></div>
+      <div id="aspect_ratio">
+        <button  id="fullwiev" onclick="lock('landscape')"> expandir</button>
+      </div>
     </div>
   
   </body>
@@ -101,4 +109,5 @@
 
     }
   </script>
+   <script src="fullscreen.js"></script> 
 </html>
