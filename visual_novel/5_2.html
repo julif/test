@@ -1,10 +1,13 @@
 <!doctype html>
 <html>
 <head>
+   <!--  font awesome -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <style>
   body{
@@ -42,7 +45,7 @@
     justify-content: center;
     align-items:  baseline;
 }
-img{
+.personajes img{
   height: 100%;
   width: auto;
   animation: breathing 1.5s ease-out infinite normal;
@@ -134,16 +137,22 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
 
 
 
-.personaje img {
-    animation-delay: 0.30s;
+
+
+#contenedor{
+        height: 100%;
+        width: 100%;
+       
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      #imagen_size1 {
+    height: 56.25vw;
+    max-height: 100%;
 }
-
-
-
-
-
-
-
 
 
 
@@ -194,22 +203,99 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
 #contenedor:-msRequestFullscreen >  #full #fullwiev {display: none;} /* IE/Edge */
 
 
+
+
+
+
+
+#top_section {
+    /* background-color: red; */
+    /* background-color: #0000005e; */
+    height: 12%;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#div_principal {
+    position: absolute;
+    /* background-color: #ff00005e; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 </style>
 </head>
-<body>
-  <aspect_ratio>
-    <div id="texto_container">  <div id="texto"></div> </div>
-    <div id="personajes">
-      <div class="personaje"> <img  onclick="dodajAktywne(this)" src="01_2.gif"></div>
-      <div class="personaje"> <img  onclick="dodajAktywne(this)" src="0_1.gif"  class="active"></div>
-    </div>
+<body onresize="myFunction()">
+  
+  <div id="contenedor">
+    <!-- <div id="contenedor_superpuesto"></div>
+    <img id="imagen_size" src="aspect_ratio_background.png"> -->
 
-<!--     -->
-<!--     -->
-  </aspect_ratio>
+    <img  id="imagen_size1" src="full_background4.png">
+    <div id="div_principal">
+      <div id="top_section">   <div id="full" onresize="myFunction_set()">
+        <button id="fullwiev" onclick="lock('landscape')">
+          <i class="fa fa-expand"></i>
+        </button>
+      </div> </div>
+      <aspect_ratio>
+        <div id="texto_container">  <div id="texto"></div> </div>
+        <div id="personajes">
+          <div class="personaje"> <img  onclick="dodajAktywne(this)" src="01_2.gif"></div>
+          <div class="personaje"> <img  onclick="dodajAktywne(this)" src="0_1.gif"  class="active"></div>
+        </div>
+      </aspect_ratio>
+    </div>
+  </div>
+</body>
+
+
 
 </body>
 <script>
+
+    setTimeout(function(){     myFunction_set(); }, 100);
+    
+    $(document).ready(function(){
+      $(window).resize(function(){myFunction_set();});
+    });
+
+    function myFunction_set(){
+
+     
+//contenedor principal
+      var width1 = document.getElementById('imagen_size1').offsetWidth;
+  var height1 = document.getElementById('imagen_size1').offsetHeight;
+
+
+  document.getElementById('div_principal').style.width= width1 +"px";
+  document.getElementById('div_principal').style.height= height1 +"px";
+
+
+//aspect_ratio
+
+
+
+      
+    }
+
 
 function dodajAktywne(elem) {
     var a = document.getElementsByTagName('img')
