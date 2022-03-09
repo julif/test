@@ -5,98 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
+      :root {
+   --card-height: 0px;
+  --card-width: calc(var(--card-height) *1.77779); 
+}
       body{
         margin: 0px auto;
         padding: 0px;
-        font-family: "proxima-nova",sans-serif;
+        font-family: 'Rubik', sans-serif;
+        background-color: black;
       }
       #contenedor{
         height: 100%;
         width: 100%;
+        background-color: #191525;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      #contenedor p{
+       
+        color: white;
+      }
+      img{
+        height: 56.25vw;
+    max-height: 100%;
+      }
+
+      #div_principal{
+        position: absolute;
+        background-color: #ff00008a;      }
+
+        #aspect_ratio{
+ 
+
+
         background-color: red;
         position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
-      }
-      aspect_ratio {
-        background-color: #463636;
-        width: 100%;
-        width: 100vw;
-        height: 56.25vw;
-        max-height: 100vh;
-        max-width: 177.78vh;
-        margin: auto;
         position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-image: url(aspect_ratio_background.png);
-        background-position: center;
-        background-size: cover;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
+        background-image: url(1080.png);
+    background-size: contain;
       }
-
-      p{
-       
-        color: white;
-      }
-      #contenedor_superpuesto{ 
-  background-color: #00000096;
-  position: absolute;
-}
-      img{
-        height: 56.25vw;
-        max-height: 100%;
-     }
 
     </style>
   </head>
-  <body>
-    <div id="el_body">
+  <body onresize="myFunction_set()">
     <div id="contenedor">
-      <div id="contenedor_superpuesto"></div>
-<img id="imagen_size" src="aspect_ratio_background.png">
-      <!-- <aspect_ratio> <p>100% x 100%</p> </aspect_ratio> -->
+      <img  id="imagen_size1" src="full_background4.png">
+      <div id="div_principal">
+       
+      
+      </div>
+      <div id="aspect_ratio"></div>
     </div>
-
-  </div>
-    
+  
   </body>
   <script>
-    setTimeout(function(){     myFunction_set(); }, 100);
 
-    $(document).ready(function(){
-  $(window).resize(function(){
-    myFunction_set();
-  });
-});
+
+
+    /* reemplazar esto por una precarga */
+    /*hacer una imagen de carga transparente */
+     setTimeout(function(){     myFunction_set(); }, 100);
+
+
 
     function myFunction_set(){
 
 
-//console.log( altura_imagen +" "+ ancho_imagen  );
-//console.log( altura_mockup  );
-
-var width = document.getElementById('imagen_size').offsetWidth;
-var height = document.getElementById('imagen_size').offsetHeight;
 
 
-document.getElementById('contenedor_superpuesto').style.width= width +"px";
-document.getElementById('contenedor_superpuesto').style.height= height +"px";
+      var width1 = document.getElementById('imagen_size1').offsetWidth;
+      var height1 = document.getElementById('imagen_size1').offsetHeight;
+      
+      document.getElementById('div_principal').style.width= width1 +"px";
+      document.getElementById('div_principal').style.height= height1 +"px";
+
+    // Aspect_ratio
+      document.getElementById('aspect_ratio').style.height= height1 +"px";
+  
+
+      var width_aspect_ratio = height1 *1.77779;
+      document.getElementById('aspect_ratio').style.width = width_aspect_ratio+"px";
 
 
-//alert( width +" "+ height);
 
+        
 
-
-
-}
-
+    }
   </script>
 </html>
