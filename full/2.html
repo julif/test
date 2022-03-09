@@ -9,24 +9,33 @@
         margin: 0px auto;
         padding: 0px;
         font-family: 'Rubik', sans-serif;
+        background-color: black;
       }
       #contenedor{
-        height: 100vh;
-        width: 100vw;
-        background-color: blue;
+        height: 100%;
+        width: 100%;
+        background-color: #191525;
         position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
       }
+
       #contenedor p{
        
         color: white;
       }
+      img{
+        height: 56.25vw;
+    max-height: 100%;
+      }
     </style>
   </head>
   <body>
-    <div id="contenedor"><p>100vh x 100vw</p></div>
+    <div id="contenedor">
+      <img src="full_background4.png">
+    </div>
   
   </body>
 </html>
