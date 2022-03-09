@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
-      :root {
+/*       :root {
    --card-height: 0px;
   --card-width: calc(var(--card-height) *1.77779); 
-}
+} */
       body{
         margin: 0px auto;
         padding: 0px;
@@ -31,7 +31,7 @@
        
         color: white;
       }
-      img{
+      #imagen_size1{
         height: 56.25vw;
     max-height: 100%;
       }
@@ -59,6 +59,8 @@
         height: 100%;
         width: 100%;
         position: relative;
+        display: flex;
+        justify-content: center;
       }
       #fullwiev{
   position: absolute;
@@ -92,6 +94,11 @@
 #contenedor:-moz-full-screen >     #aspect_ratio #fullwiev {display: none;} /* Firefox */
 #contenedor:-webkit-full-screen >    #aspect_ratio #fullwiev {display: none;} /* Chrome, Safari & Opera */
 #contenedor:-msRequestFullscreen >    #aspect_ratio #fullwiev {display: none;} /* IE/Edge */
+
+
+
+
+#contenido img{height: 100%;}
     </style>
   </head>
   <body onresize="myFunction_set()">
@@ -105,6 +112,7 @@
       <div id="aspect_ratio">
         <div id="contenido">
           <button  id="fullwiev" onclick="lock('landscape')"> <i class="fa fa-expand"></i></button>
+          <img src="julif.gif">
         </div>
        
       </div>
