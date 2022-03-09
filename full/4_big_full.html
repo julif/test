@@ -1,0 +1,182 @@
+<!doctype   html >
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <!--  font awesome -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <style>
+      body{
+        margin: 0px auto;
+        padding: 0px;
+        font-family: "proxima-nova",sans-serif;
+        background-color: black;
+      }
+      #contenedor{
+        height: 100%;
+        width: 100%;
+       
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      aspect_ratio {
+        /* background-color: #463636; */
+        width: 100%;
+        width: 100vw;
+        height: 56.25vw;
+        max-height: 100%;
+        max-width: 177.78vh;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: url(aspect_ratio_background.png);
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      p{ color: white;}
+      #contenedor_superpuesto{ 
+        background-color: #00000096;
+        position: absolute;
+      }
+      #imagen_size{
+        height: 56.25vw;
+        max-height: 100%;
+     }
+     #imagen_size1{
+        height: 56.25vw;
+        max-height: 100%;
+     }
+     #div_principal{position: absolute;
+      /* background-color: #ff00005e; */
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  
+  }
+
+  #top_section{
+  /* background-color: red; */
+  /* background-color: #0000005e; */
+  height: 12%;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    max-width: 100%;
+    
+}
+/* --------------------------------------||  fullwiev  ||-------------------------------------- */
+#full {
+  background-color: transparent;
+  color: white;
+  font-family: sans-serif;
+  margin: 10px;
+  float: right;
+  position: absolute;
+  border-radius: 20%;
+  right: 0px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  z-index: 5;
+  top:0;
+}
+#fullwiev {
+  padding: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  border: none;
+  color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 20%;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  display: inherit;
+  outline: 0;
+  text-decoration: none;
+}
+/* #fullwiev:hover { color: #1e90ff;} */
+/* #fullwiev:hover { color: black;} */
+
+/* .fa-expand{font-size: 20px;} */
+.fa-expand {
+  font-size: 30px!important;
+}
+
+#contenedor:requestFullscreen >   #full #fullwiev {display: none;}
+#contenedor:-moz-full-screen >  #full #fullwiev {display: none;} /* Firefox */
+#contenedor:-webkit-full-screen >  #full #fullwiev {display: none;} /* Chrome, Safari & Opera */
+#contenedor:-msRequestFullscreen >  #full #fullwiev {display: none;} /* IE/Edge */
+    </style>
+  </head>
+  <body>
+  
+    <div id="contenedor">
+      <!-- <div id="contenedor_superpuesto"></div>
+      <img id="imagen_size" src="aspect_ratio_background.png"> -->
+
+      <img  id="imagen_size1" src="full_background.png">
+      <div id="div_principal">
+        <div id="top_section">   <div id="full" onresize="myFunction_set()">
+          <button id="fullwiev" onclick="lock('landscape')">
+            <i class="fa fa-expand"></i>
+          </button>
+        </div> </div>
+        <aspect_ratio></aspect_ratio>
+      </div>
+    </div>
+  </body>
+   <script>
+    setTimeout(function(){     myFunction_set(); }, 100);
+    
+    $(document).ready(function(){
+      $(window).resize(function(){myFunction_set();});
+    });
+
+    function myFunction_set(){
+
+      /* var width = document.getElementById('imagen_size').offsetWidth;
+      var height = document.getElementById('imagen_size').offsetHeight;
+      
+      document.getElementById('contenedor_superpuesto').style.width= width +"px";
+      document.getElementById('contenedor_superpuesto').style.height= height +"px"; */
+
+
+      var width1 = document.getElementById('imagen_size1').offsetWidth;
+  var height1 = document.getElementById('imagen_size1').offsetHeight;
+
+
+  document.getElementById('div_principal').style.width= width1 +"px";
+  document.getElementById('div_principal').style.height= height1 +"px";
+
+    }
+  </script> 
+
+    <script src="fullscreen.js"></script> 
+    <script>
+      document.addEventListener('fullscreenchange', (event) => {
+        if (document.fullscreenElement) {
+          console.log(`Element: ${contenedor} entered full-screen mode.`);
+          document.getElementById('full').style.display= "none";
+        } else {
+          console.log('Leaving full-screen mode.');
+          document.getElementById('full').style.display= "inherit";
+        }
+      });
+    </script>
+</html>
