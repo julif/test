@@ -41,6 +41,8 @@
       #div_principal{
         position: absolute; 
         background-color: #2e2840; 
+         background-color: #000000;
+
       }
 
         #aspect_ratio{
@@ -57,7 +59,7 @@
         background-image: url(fondo_1.png); 
 
  
-    background-size: contain;
+    background-size: cover;
       }
 
       #contenido{
@@ -225,6 +227,19 @@ h2{
     line-height: 140%;
     
 }
+
+
+#fondo_texto_grande{
+  background-color: red;
+    height: 28%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    bottom: 0;
+    background-color: #0a0a0c;
+    display: none;
+
+}
     </style>
   </head>
   <body onresize="myFunction_set()">
@@ -233,7 +248,7 @@ h2{
       <img  id="imagen_size1" src="full_background4.png">
       <div id="div_principal">
             
-      
+      <div id="fondo_texto_grande"> </div>
       </div>
       <div id="aspect_ratio">
         <div id="contenido">
