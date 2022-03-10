@@ -37,8 +37,8 @@
       }
 
       #div_principal{
-        position: absolute; 
-        background-color: #2e2840; 
+        position: absolute;
+        /* background-color: #ff00008a;       */
       }
 
         #aspect_ratio{
@@ -51,7 +51,7 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        /* background-image: url(1080.png); */
+        background-image: url(1080.png);
     background-size: contain;
       }
 
@@ -103,7 +103,6 @@
   width: auto;
   animation: breathing 1.5s ease-out infinite normal;
     transform-origin: bottom;
-    animation-delay: 0.30s;
 }
 @keyframes slidein {
 from {
@@ -160,10 +159,7 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
 
 
 
-.inactive {
-    filter: brightness(0.6) grayscale(0.2);
-    margin-top: 5%;
-}
+
 
 
 #texto_container {
@@ -202,7 +198,7 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
           <div id="personajes">
 
             <div class="personaje"> <img src="julif.gif"></div>
-            <div class="personaje"><img src="nix.gif" class="inactive"></div>
+            <div class="personaje"><img src="nix.gif"></div>
           </div>
             <div id="texto_container">  <div id="texto"></div> </div>
         </div>
