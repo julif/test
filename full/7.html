@@ -52,6 +52,7 @@
         align-items: center;
         position: absolute;
         /* background-image: url(1080.png); */
+ 
     background-size: contain;
       }
 
@@ -199,17 +200,22 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
     color: #db9044;
     color: white;
     padding: -3.5%;
-    font-size: 1.7vh;
+   
    /*  background-color: red;
     background-color: #121116; */
     margin-left: 55px;
+    margin-bottom: 0px;
 }
-#texto_p{
+h2{
+  margin-bottom: 0px;
+}
+#texto_p p{
   color: white;
-  color: #9f9da5;
+  color: #7e7e7e;
     margin-left: 55px;
     margin-right: 55px;
-    font-size: 2vh;
+    /* font-size: 2vh; */
+    
 }
     </style>
   </head>
@@ -232,7 +238,7 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
           </div>
             <div id="texto_container">  
               <div id="texto">
-                <div id="titulo"><h2>Nombre</h2>  </div>
+                <div id="titulo"><h2  id="titulo_h2"> Julif </h2>  </div>
                 <div id="texto_p">
                   <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
                 </div>
@@ -273,6 +279,9 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
 
       var width_aspect_ratio = height1 *1.77779;
       document.getElementById('aspect_ratio').style.width = width_aspect_ratio+"px";
+
+      document.getElementById('titulo_h2').style.fontSize =  ( height1 / 26 )+"px";
+      document.getElementById('texto_p').style.fontSize =  ( height1 / 46 )+"px";
 
 
 
