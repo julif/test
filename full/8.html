@@ -37,8 +37,8 @@
       }
 
       #div_principal{
-        position: absolute;
-        /* background-color: #ff00008a;       */
+        position: absolute; 
+        background-color: #2e2840; 
       }
 
         #aspect_ratio{
@@ -51,7 +51,10 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        background-image: url(1080.png);
+        /* background-image: url(1080.png); */ 
+        background-image: url(fondo_1.png); 
+
+ 
     background-size: contain;
       }
 
@@ -66,15 +69,16 @@
   position: absolute;
     /* left: 0px; */
     right: 0px;
-    margin: 3%;
+    margin: 1%;
 }
 
 #fullwiev {
-    padding: 15px;
+/*     padding: 15px;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-top: 13px;
-    padding-bottom: 13px;
+    padding-bottom: 13px; */
+    padding: 1%;
     border: none;
     color: #fff;
     background-color: transparent;
@@ -87,7 +91,7 @@
     outline: 0;
     text-decoration: none;
 }
-#fullwiev i{font-size: 30px!important;}
+/* #fullwiev i{font-size: 30px!important;} */
 
 
       #contenedor:requestFullscreen >    #aspect_ratio #fullwiev {display: none;}
@@ -103,6 +107,9 @@
   width: auto;
   animation: breathing 1.5s ease-out infinite normal;
     transform-origin: bottom;
+    animation-delay: 0.30s; 
+    transition: all 0.5s;
+
 }
 @keyframes slidein {
 from {
@@ -159,7 +166,11 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
 
 
 
-
+.inactive {
+    /* filter: brightness(0.6) grayscale(0.2); */
+    filter: brightness(0.5) grayscale(0.6);
+    margin-top: 5%;
+}
 
 
 #texto_container {
@@ -181,6 +192,36 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
     /* margin-bottom: 10%; */
     border-radius: 0px;
 }
+
+
+
+
+#titulo{
+ 
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    color: red;
+    color: #db9044;
+    color: white;
+    padding: -3.5%;
+   
+   /*  background-color: red;
+    background-color: #121116; */
+    margin-left: 4%;
+    margin-bottom: 0px;
+}
+h2{
+  margin-bottom: 0px;
+}
+#texto_p p{
+  color: white;
+  color: #7e7e7e;
+    margin-left: 4%;
+    margin-right: 4%;
+    /* font-size: 2vh; */
+    
+}
     </style>
   </head>
   <body onresize="myFunction_set()">
@@ -193,14 +234,23 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
       </div>
       <div id="aspect_ratio">
         <div id="contenido">
-          <button  id="fullwiev" onclick="lock('landscape')"> <i class="fa fa-expand"></i></button>
+          <button  id="fullwiev" onclick="lock('landscape')"> <i id="i_full" class="fa fa-expand"></i></button>
           
           <div id="personajes">
 
             <div class="personaje"> <img src="julif.gif"></div>
-            <div class="personaje"><img src="nix.gif"></div>
+           <!--  <div class="personaje"><img src="nix.gif" class="inactive"></div> -->
           </div>
-            <div id="texto_container">  <div id="texto"></div> </div>
+            <div id="texto_container">  
+              <div id="texto">
+                <div id="titulo"><h2  id="titulo_h2"> Julif </h2>  </div>
+                <div id="texto_p">
+                  <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
+                </div>
+           
+
+              </div> 
+            </div>
         </div>
        
       </div>
@@ -234,6 +284,12 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
 
       var width_aspect_ratio = height1 *1.77779;
       document.getElementById('aspect_ratio').style.width = width_aspect_ratio+"px";
+
+      document.getElementById('titulo_h2').style.fontSize =  ( height1 / 26 )+"px";
+      document.getElementById('texto_p').style.fontSize =  ( height1 / 34 )+"px";
+      // document.getElementById('i_full').style.fontSize =  ( height1 / 36 )+"px";
+       document.getElementById('i_full').style.fontSize ="150%";
+
 
 
 
