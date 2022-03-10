@@ -1,0 +1,175 @@
+<!doctype   html >
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+/*       :root {
+   --card-height: 0px;
+  --card-width: calc(var(--card-height) *1.77779); 
+} */
+      body{
+        margin: 0px auto;
+        padding: 0px;
+        font-family: 'Rubik', sans-serif;
+        background-color: black;
+      }
+      #contenedor{
+        height: 100%;
+        width: 100%;
+        background-color: #191525;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      #contenedor p{
+       
+        color: white;
+      }
+      #imagen_size1{
+        height: 56.25vw;
+    max-height: 100%;
+      }
+
+      #div_principal{
+        position: absolute;
+        /* background-color: #ff00008a;       */
+      }
+
+        #aspect_ratio{
+ 
+
+
+        /* background-color: red; */
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        background-image: url(1080.png);
+    background-size: contain;
+      }
+
+      #contenido{
+        height: 100%;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+      #fullwiev{
+  position: absolute;
+    /* left: 0px; */
+    right: 0px;
+    margin: 3%;
+}
+
+#fullwiev {
+    padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border: none;
+    color: #fff;
+    background-color: transparent;
+    background-color: black;
+    cursor: pointer;
+    border-radius: 20%;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    display: inherit;
+    outline: 0;
+    text-decoration: none;
+}
+#fullwiev i{font-size: 30px!important;}
+
+
+      #contenedor:requestFullscreen >    #aspect_ratio #fullwiev {display: none;}
+#contenedor:-moz-full-screen >     #aspect_ratio #fullwiev {display: none;} /* Firefox */
+#contenedor:-webkit-full-screen >    #aspect_ratio #fullwiev {display: none;} /* Chrome, Safari & Opera */
+#contenedor:-msRequestFullscreen >    #aspect_ratio #fullwiev {display: none;} /* IE/Edge */
+
+
+
+
+#contenido img{height: 100%; width: auto;}
+
+
+
+
+
+
+.personaje {
+    background-color: #0000ff1f;
+    /* margin: 25px; */
+    /* margin: 2%; */
+    animation: slidein 0.5s forwards;
+    width: 25%;
+    height: 100%;
+    /* width: auto; */
+    display: flex;
+    justify-content: center;
+}
+    </style>
+  </head>
+  <body onresize="myFunction_set()">
+
+    <div id="contenedor">
+      <img  id="imagen_size1" src="full_background4.png">
+      <div id="div_principal">
+            
+      
+      </div>
+      <div id="aspect_ratio">
+        <div id="contenido">
+          <button  id="fullwiev" onclick="lock('landscape')"> <i class="fa fa-expand"></i></button>
+          <div class="personaje"> <img src="julif.gif"></div>
+            <div class="personaje"><img src="nix.gif"></div>
+        </div>
+       
+      </div>
+    </div>
+  
+  </body>
+  <script>
+
+
+
+    /* reemplazar esto por una precarga */
+    /*hacer una imagen de carga transparente */
+     setTimeout(function(){     myFunction_set(); }, 100);
+
+
+
+    function myFunction_set(){
+
+
+
+
+      var width1 = document.getElementById('imagen_size1').offsetWidth;
+      var height1 = document.getElementById('imagen_size1').offsetHeight;
+      
+      document.getElementById('div_principal').style.width= width1 +"px";
+      document.getElementById('div_principal').style.height= height1 +"px";
+
+    // Aspect_ratio
+      document.getElementById('aspect_ratio').style.height= height1 +"px";
+  
+
+      var width_aspect_ratio = height1 *1.77779;
+      document.getElementById('aspect_ratio').style.width = width_aspect_ratio+"px";
+
+
+
+        
+
+    }
+  </script>
+   <script src="fullscreen.js"></script> 
+</html>
