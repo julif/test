@@ -133,13 +133,19 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
 
 
 
-  
 
 
 
 
+  #personajes {
+    /* background-color: #ffffffb8; */
+    display: flex;
+    justify-content: center;
+    height: 87%;
+    width: 100%;
+}
 .personaje {
-    background-color: #0000ff1f;
+    /* background-color: #0000ff1f; */
     /* margin: 25px; */
     /* margin: 2%; */
     /* animation: slidein 0.5s forwards; */
@@ -148,6 +154,32 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
     /* width: auto; */
     display: flex;
     justify-content: center;
+}
+
+
+
+
+
+
+
+#texto_container {
+    /* background-color: black; */
+    height: 25%;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    bottom: 0;
+    padding-bottom: 1.5%;
+}
+#texto {
+    height: 100%;
+    background-color: white;
+    background-color: #0a0a0c;
+    /* margin-bottom: 10%; */
+    margin-left: 10%;
+    margin-right: 10%;
+    /* margin-bottom: 10%; */
+    border-radius: 0px;
 }
     </style>
   </head>
@@ -162,8 +194,13 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
       <div id="aspect_ratio">
         <div id="contenido">
           <button  id="fullwiev" onclick="lock('landscape')"> <i class="fa fa-expand"></i></button>
-          <div class="personaje"> <img src="julif.gif"></div>
+          
+          <div id="personajes">
+
+            <div class="personaje"> <img src="julif.gif"></div>
             <div class="personaje"><img src="nix.gif"></div>
+          </div>
+            <div id="texto_container">  <div id="texto"></div> </div>
         </div>
        
       </div>
