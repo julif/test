@@ -161,7 +161,8 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
 
 
 .inactive {
-    filter: brightness(0.6) grayscale(0.2);
+    /* filter: brightness(0.6) grayscale(0.2); */
+    filter: brightness(0.5) grayscale(0.6);
     margin-top: 5%;
 }
 
@@ -185,6 +186,31 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
     /* margin-bottom: 10%; */
     border-radius: 0px;
 }
+
+
+
+
+#titulo{
+ 
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    color: red;
+    color: #db9044;
+    color: white;
+    padding: -3.5%;
+    font-size: 1.7vh;
+   /*  background-color: red;
+    background-color: #121116; */
+    margin-left: 55px;
+}
+#texto_p{
+  color: white;
+  color: #9f9da5;
+    margin-left: 55px;
+    margin-right: 55px;
+    font-size: 2vh;
+}
     </style>
   </head>
   <body onresize="myFunction_set()">
@@ -204,7 +230,16 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
             <div class="personaje"> <img src="julif.gif"></div>
             <div class="personaje"><img src="nix.gif" class="inactive"></div>
           </div>
-            <div id="texto_container">  <div id="texto"></div> </div>
+            <div id="texto_container">  
+              <div id="texto">
+                <div id="titulo"><h2>Nombre</h2>  </div>
+                <div id="texto_p">
+                  <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
+                </div>
+           
+
+              </div> 
+            </div>
         </div>
        
       </div>
