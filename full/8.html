@@ -371,13 +371,19 @@ nav{
 
       document.getElementById('titulo_h2').style.fontSize =  ( height1 / 26 )+"px";
       document.getElementById('texto_p').style.fontSize =  ( height1 / 34 )+"px";
+
+
+  
        document.getElementById('i_full').style.fontSize =  ( height1 / 26 )+"px";
       document.getElementById('hamburger').style.fontSize =  ( height1 / 26 )+"px";
       //  document.getElementById('i_full').style.fontSize ="150%";
 
 
 
-
+      if ( height1 < 800 ){
+        document.getElementById('i_full').style.fontSize =  ( height1 / 20 )+"px";
+      document.getElementById('hamburger').style.fontSize =  ( height1 / 20 )+"px";
+      }
         
 
     }
