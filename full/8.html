@@ -69,31 +69,31 @@
         display: flex;
         justify-content: center;
       }
-      #fullwiev{
-  position: absolute;
-    /* left: 0px; */
-    right: 0px;
-    margin: 1%;
-}
+
+      #full{
+        height: 7%;
+    width: 100%;
+    /* background-color: #000000a8; */
+    position: absolute;
+    top: 0;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding-right: 2%;
+    justify-content: end;
+    margin-left: 10%;
+    width: 90%
+      }
+
 
 #fullwiev {
-/*     padding: 15px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-top: 13px;
-    padding-bottom: 13px; */
-    padding: 1%;
+  height: 100%;
+    width: auto;
     border: none;
-    color: #fff;
     background-color: transparent;
-    background-color: black;
+    color: white;
     cursor: pointer;
-    border-radius: 20%;
-    transition: 0.5s;
-    -webkit-transition: 0.5s;
-    display: inherit;
-    outline: 0;
-    text-decoration: none;
+
 }
 /* #fullwiev i{font-size: 30px!important;} */
 
@@ -194,7 +194,10 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
     margin-left: 10%;
     margin-right: 10%;
     /* margin-bottom: 10%; */
-    border-radius: 0px;
+    /* border-radius: 0px;    clip-path: polygon(0 3%,0 33%,1.5% 45%,2% 99%,53% 97%,100% 100%,99.5% 70%,98% 44%,99% 1%,65% 3%,36% 1%); */
+    clip-path: polygon(13% 0%, 16% 8%, 17% 0%, 100% 1%, 99% 64%, 100% 100%, 73% 99%, 73% 89%, 72% 100%, 2% 100%, 2% 77%, -1% 58%, 0% 0%);
+
+
 }
 
 
@@ -241,15 +244,29 @@ h2{
 
 }
 nav{
-  height: 10%;
-    width: 100%;
-    background-color:     #000000a8;
+  height: 7%;
+    width: 90%;
+    margin-right: 10%;
+    /* background-color:     #000000a8; */
 
     position: absolute;
     top: 0;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding-left: 2%;
+    z-index: 10;
 }
+
+
+
 @media only screen and (max-width: 700px) {
   nav{height: 15%;}
+}
+
+
+#hamburger{
+  height: 50%; width: auto;
 }
     </style>
   </head>
@@ -262,9 +279,19 @@ nav{
       <div id="fondo_texto_grande"> </div>
       </div>
       <div id="aspect_ratio">
-        <nav></nav>
+        <nav>
+          <!-- <img  id="hamburger" src="hamburger.png" style=""> -->
+          <button onclick="alert('I am an alert box!');" style="
+          height: 100%;
+          width: auto;
+          border: none;
+          background-color: transparent;
+          color: white;
+      "> <i class="fa fa-bars" id="hamburger"></i></button>
+        </nav>
         <div id="contenido">
-          <button  id="fullwiev" onclick="lock('landscape')"> <i id="i_full" class="fa fa-expand"></i></button>
+          <div id="full">   <button  id="fullwiev" onclick="lock('landscape')"> <i id="i_full" class="fa fa-expand"></i></button></div>
+       
           
           <div id="personajes">
 
@@ -317,8 +344,9 @@ nav{
 
       document.getElementById('titulo_h2').style.fontSize =  ( height1 / 26 )+"px";
       document.getElementById('texto_p').style.fontSize =  ( height1 / 34 )+"px";
-      // document.getElementById('i_full').style.fontSize =  ( height1 / 36 )+"px";
-       document.getElementById('i_full').style.fontSize ="150%";
+       document.getElementById('i_full').style.fontSize =  ( height1 / 26 )+"px";
+      document.getElementById('hamburger').style.fontSize =  ( height1 / 26 )+"px";
+      //  document.getElementById('i_full').style.fontSize ="150%";
 
 
 
