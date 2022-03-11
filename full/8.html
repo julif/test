@@ -245,19 +245,39 @@ h2{
 }
 nav{
   height: 7%;
-    width: 90%;
-    margin-right: 10%;
-    /* background-color:     #000000a8; */
+    width: 100%;
+  
+    background-color:     #000000a8; 
 
     position: absolute;
     top: 0;
     display: flex;
     /* justify-content: center; */
     align-items: center;
-    padding-left: 2%;
+    /* padding-left: 2%; */
     z-index: 10;
 }
-
+#nav_content{
+  position: relative;
+    background-color: red;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+#nav_left {
+    height: 100%;
+    width: 90px;
+    position: absolute;
+    background-color: blue;
+    left: 0;
+}
+#nav_rigth{
+  height: 100%;
+    width: 90px;
+    position: absolute;
+    background-color: green;
+    right: 0;
+}
 
 
 @media only screen and (max-width: 700px) {
@@ -280,17 +300,20 @@ nav{
       </div>
       <div id="aspect_ratio">
         <nav>
-          <!-- <img  id="hamburger" src="hamburger.png" style=""> -->
-          <button onclick="alert('I am an alert box!');" style="
+         <div id="nav_content">
+           <div id="nav_left"></div>
+           <div id="nav_rigth"></div>
+         </div>
+          <!-- <button onclick="alert('I am an alert box!');" style="
           height: 100%;
           width: auto;
           border: none;
           background-color: transparent;
           color: white;
-      "> <i class="fa fa-bars" id="hamburger"></i></button>
+      "> <i class="fa fa-bars" id="hamburger"></i></button> -->
         </nav>
         <div id="contenido">
-          <div id="full">   <button  id="fullwiev" onclick="lock('landscape')"> <i id="i_full" class="fa fa-expand"></i></button></div>
+          <!-- <div id="full">   <button  id="fullwiev" onclick="lock('landscape')"> <i id="i_full" class="fa fa-expand"></i></button></div> -->
        
           
           <div id="personajes">
