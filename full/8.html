@@ -245,9 +245,9 @@ h2{
 }
 nav{
   height: 7%;
-    width: 100%;
+    width: 98%;
   
-    background-color:     #000000a8; 
+    /* background-color:     #000000a8;  */
 
     position: absolute;
     top: 0;
@@ -259,23 +259,24 @@ nav{
 }
 #nav_content{
   position: relative;
-    background-color: red;
+    /* background-color: red; */
     display: block;
     height: 100%;
     width: 100%;
 }
 #nav_left {
-    height: 100%;
-    width: 90px;
+  height: 100%;
+
     position: absolute;
-    background-color: blue;
+
     left: 0;
+
 }
 #nav_rigth{
   height: 100%;
-    width: 90px;
+  
     position: absolute;
-    background-color: green;
+  
     right: 0;
 }
 
@@ -301,19 +302,22 @@ nav{
       <div id="aspect_ratio">
         <nav>
          <div id="nav_content">
-           <div id="nav_left"></div>
-           <div id="nav_rigth"></div>
+           <div id="nav_left"><button onclick="alert('I am an alert box!');" style="
+            height: 100%;
+            width: auto;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+        "> <i class="fa fa-bars" id="hamburger"></i></button></div>
+           <div id="nav_rigth">
+            <button  id="fullwiev" onclick="lock('landscape')"> <i id="i_full" class="fa fa-expand"></i></button>
+           </div>
          </div>
-          <!-- <button onclick="alert('I am an alert box!');" style="
-          height: 100%;
-          width: auto;
-          border: none;
-          background-color: transparent;
-          color: white;
-      "> <i class="fa fa-bars" id="hamburger"></i></button> -->
+          <!--  -->
         </nav>
         <div id="contenido">
-          <!-- <div id="full">   <button  id="fullwiev" onclick="lock('landscape')"> <i id="i_full" class="fa fa-expand"></i></button></div> -->
+          <!-- <div id="full">  </div> -->
        
           
           <div id="personajes">
