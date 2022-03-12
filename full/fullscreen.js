@@ -12,5 +12,5 @@ function fullScreen() {
 }
 function lock(orientation) {
   fullScreen();
-  // screen.orientation.lock(orientation);
+   screen.orientation.lock(orientation);
 }
