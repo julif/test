@@ -1,0 +1,375 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="3.css">
+
+    <style>
+/* background-color: #e8edf7; */
+
+ :root {
+  --active_color:  #a60146;
+  --main_background:  #101a2f;
+  --objeto_background: #262f4c;
+  --gap: 20px;
+  --radius: 10px;
+} 
+/*  :root {
+  --main_background:  #e3e9ec; 
+  --objeto_background: white;
+} 
+ */
+ html, body{
+  background-color: var(--main_background);
+  font-family: "proxima-nova",sans-serif;
+ }
+.active{
+  background-color:  var(--active_color);
+}
+main{
+  background-color: var(--main_background);
+}
+.objeto{
+  background-color: #333450;
+    height: 200px;
+    width: 50%;
+    width: 50%;
+ 
+    border-radius: var(--radius);
+ /*    margin-right: 7px;
+    margin-left: 7px; */
+}
+.dos_columnas{
+  display: flex;
+  margin: var(--gap);
+  gap: var(--gap);
+}
+.tres_columnas{
+  display: flex;
+  /* margin: var(--gap); */
+  gap: var(--gap);
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.objeto_dos_columnas{
+  background-color: var(--objeto_background);
+  min-height: 10px;
+  overflow: hidden;
+  width: 32%;
+  border-radius: 6px;
+  border-radius: var(--radius);
+  transition: all  1s;
+}
+
+.objeto_tres_columnas{
+  background-color: var(--objeto_background);
+  background-color: #0c111e;
+  background-color:   #18243c;
+  min-height: 50px;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  width: 50.5%;
+}
+.objeto_tres_columnas img{    transition: transform 1.5s ease; }
+.objeto_tres_columnas:hover img{    transform: scale(1.2);  object-fit: cover;}
+
+
+#experimento{
+/*   width: var(--card-width);
+    height: var(--card-height); */
+
+  /*   height:calc( 100vw / 2.4); /*   16:9 */
+  height:calc( 100vw / 4.3);
+  width:  100%;
+  background-color: #2b2d38;
+  background-image: url("runescape_1.png");
+  background-position: center;
+  background-size: cover;
+  transition: height 1.5s;
+}
+
+
+sidebar{
+  transition: all  1s;
+  position: fixed;
+  width: 260px;
+  top: 0px;
+  left: 0px;
+}
+main{
+  transition: all  1s;
+  margin-left: 260px;
+  display: inline-table;
+}
+h3{
+  color: #a60146;
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+.testo{
+  padding: 35px;
+    padding-top: 0px;font-size: 1.1em;
+    color: #92a1ae;
+    color: #87aac97a;
+}
+
+@media only screen and (max-width: 1050px) { .objeto_tres_columnas{width: 31%;}}
+@media only screen and (max-width: 1100px) { .objeto_tres_columnas{width: 48%;}}
+@media only screen and (max-width: 1000px) {
+  sidebar{ top: 0px; left: -260px;}
+  main{ margin-left: 0px; width: 100%;}
+}
+@media only screen and (max-width: 600px) {
+  .dos_columnas, .tres_columnas {flex-wrap: wrap;}
+  :root { --gap: 15px;} 
+}
+
+
+
+
+
+
+
+
+personajes{
+  height: 100%;
+    width: 100%;
+    display: block;
+    /* padding: 25px; */
+    /* background-color: #18243c; */
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+personaje{
+  width: 100%;
+    display: block;
+    background-color: #1c2944;
+    border-radius: var(--radius);
+    background-color: #18243c;
+ 
+    margin-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 15px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+personaje img{
+  height: 100px;
+    width: auto;
+    border-radius: var(--radius); 
+}
+.personaje_nombre{
+  margin-left: 25px;
+  color: #ffffff;
+}
+
+
+footer{
+  background-color: #0a0a18;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #202a42;
+    padding: 20px;
+}
+::-webkit-scrollbar {
+width: 7px;
+/* background-color: #e2e8f1; */
+background-color: #0f0f15;
+background-color: #000000;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+/* background-color: rgba(0, 0, 0, 0.2); */
+background-color: var(--active_color);
+ background-color: white; 
+border-radius: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ article {
+    background-color: white;
+    margin-bottom: 15px;
+    padding: 10px;
+
+    overflow: hidden;
+    display: table;
+    display: flex;
+    padding-left: 0px;
+    align-items: center;
+    padding: 20px;
+    /* box-shadow: 0 0 0px 3px #00000014; */
+    position: relative;
+
+    background-color: #18243c;
+    background-color: #152138;
+    /* background-color: #1e2b44; */
+    border-radius: var(--radius); 
+
+}
+article .post_thumbnail {
+    background-color: #afafaf;
+    background-color: #101a2f;
+    height: 100%;
+    width: 23%;
+    display: inline-table;
+    width: 210px;
+    height: 125px;
+    width: 265px;
+    height: 165px;
+    overflow: hidden;
+    border-radius: var(--radius); 
+
+}
+.post_thumbnail .thumbnail {
+    background-image: url(../img/loader2.gif);
+    background-repeat: no-repeat;
+    display: block;
+ 
+    background-size: cover;
+    background-position: top center;
+    margin: 5px;
+    height: 100%;
+    width: 101%;
+    margin: 0;
+    /* transition: all 0.5s 0s ease; */
+    background-position: center;
+
+
+    opacity: 0;
+}
+article .post_content {
+    padding-left: 25px;
+    padding-right: 15px;
+    color: #87aac97a;
+}
+.post_content a {
+    text-decoration: none;
+    color: black;
+    color: white;
+}
+
+articles{
+/*   height: 100%; */
+    width: 100%;
+    display: block;
+  padding: 25px;
+}
+
+.post_thumbnail .thumbnail img {
+    display: none;
+    opacity: 0;
+}
+    </style>
+  </head>
+  <body>
+    <sidebar>
+      <img src="logo.png" style="width: 100%;margin-top: 22px;margin-bottom: 16px;">
+      <separador></separador>
+      <sidebar_links>
+        <a class="active"> Item 1 </a>
+        <a> Item 2 </a>
+        <a> Item 3 </a>
+      </sidebar_links>
+      <separador></separador>
+
+    </sidebar>
+
+<!-- <sidebar_width></sidebar_width> -->
+    <main> 
+   <!--    <banner> <banner_content> banner </banner_content> </banner>
+     <!--  <cards>
+        <card> card 1 </card>
+        <card> card 2 </card>
+        <card> card 3 </card> -->
+        <!-- <div id="experimento"></div> -->
+<img src="tenticle-head-games-logo-large.jpg" style="width: 100%; height: 337px; object-fit: cover;"">
+
+
+
+
+
+
+
+
+
+
+
+<articles>
+
+<article id="post_007">
+  <div class="post_thumbnail">
+    <a class="thumbnail" style="background-image: url( 017.png);" href="blog/post_007.html"><img class="thumbnail_img" src="017.png"></a>
+  </div>
+  <div id="post_content_post_007" class="post_content">
+    <a href="blog/post_007.html"><h2>Titulo 1 </h2></a>
+    <span class="post_date">11/8/2021</span>
+    <div id="etiquetas_post_007" class="etiquetas"></div>
+    <p class="post_extracto">  un juego de cartas para navegador </p>
+  </div>
+</article>
+
+
+
+<article id="post_008">
+  <div class="post_thumbnail">
+    <a class="thumbnail" style="background-image: url( 018.png);" href="blog/post_007.html"><img class="thumbnail_img" src="018.png"></a>
+  </div>
+  <div id="post_content_post_007" class="post_content">
+    <a href="blog/post_007.html"><h2> Titulo 2</h2></a>
+    <span class="post_date">11/8/2021</span>
+    <div id="etiquetas_post_007" class="etiquetas"></div>
+    <p class="post_extracto">  un juego de cartas para navegador </p>
+  </div>
+</article>
+
+<article id="post_008">
+  <div class="post_thumbnail">
+    <a class="thumbnail" style="background-image: url( 018.png);" href="blog/post_007.html"><img class="thumbnail_img" src="018.png"></a>
+  </div>
+  <div id="post_content_post_007" class="post_content">
+    <a href="blog/post_007.html"><h2> Titulo 3</h2></a>
+    <span class="post_date">11/8/2021</span>
+    <div id="etiquetas_post_007" class="etiquetas"></div>
+    <p class="post_extracto">  un juego de cartas para navegador </p>
+  </div>
+</article>
+
+<!--  <footer> footer </footer>  -->
+</articles>
+    </main>
+</body>
+</html>
+

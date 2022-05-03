@@ -1,0 +1,162 @@
+:root {
+  --sidebar_width: 13%;
+  --white: #ffffff;
+}
+
+/* para evitar que el padding cambie el with */
+* { 
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+   box-sizing: border-box; 
+}
+html, 
+body {
+    height: 100%;
+    margin: 0px auto;
+  padding: 0px;
+  background-color: #202137;
+}
+body{
+  margin: 0px;
+  font-family: "proxima-nova",sans-serif;
+  color: #4a5073;
+  /* background-color: #f5f8fb; */
+
+  display: flex;
+}
+sidebar{
+  height: 100%;
+  width: var(--sidebar_width);
+  display: block;
+  background-color: #0a0a18;
+  min-width: 260px;
+  overflow: hidden;
+
+/*   padding-top: 1rem!important;
+  padding-right: 1.5rem!important;
+    padding-left: 1.5rem!important; */
+
+}
+sidebar_links a{
+  cursor: pointer;
+  color: white;
+    width: 100%;
+    display: block;
+
+    cursor: pointer;
+
+    width: 100%;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 6px;
+
+    padding-left: 22px;
+    margin-bottom: 10px;
+}
+sidebar_links a:hover:not(.active){
+  background-color: #141825;
+  background-color: #181e30;
+}
+.active {
+  background-color: #3982cd;
+
+}
+sidebar_links{
+  padding: 15px;
+    /* position: relative; */
+    display: block;
+}
+svg{
+  width: 1.125em;
+}
+main{
+  height: 100%;
+  width:  100%;
+  display: block;
+  /* background-color: green; */
+}
+
+
+banner{
+ /*   */
+  width: 100%;
+  height: 400px;
+  display: block;
+
+
+
+}
+banner_content{
+ 
+  display: block;
+  margin: 1%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: #313250;
+  
+  background-image: url(runescape_1.png);
+  background-position: center;
+  background-size: cover;
+  
+}
+
+cards{
+  display: flex;
+  justify-content: space-between;
+  padding: 1%;
+  flex-wrap: wrap;
+}
+card{
+  display: block;
+  width: 32.5%;
+  background-color: #313250;
+    height: 446px;
+    border-radius: 3%;
+}
+
+
+separador{
+  display: block;
+    height: 3px;
+    background-color: #181e307a;
+    margin: 0px 20px 0px;
+}
+
+/*   :root {--sidebar_width: 0%;}
+
+
+ sidebar{
+    display: none;
+  }
+
+
+  sidebar{
+    display: none;
+  }
+  cards{
+    justify-content: space-around;
+  }
+  card{
+    width: 48%;
+    margin-bottom: 2%; */
+
+
+@media only screen and (max-width: 790px) {
+
+
+
+/* sidebar{
+  height: 0px;
+}
+main{
+  width: 100%;
+}
+  cards{
+    justify-content: space-around;
+  }
+  card{
+    width: 100%;
+    margin-bottom: 2%;
+  } */
+}

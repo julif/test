@@ -1,0 +1,190 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="3.css">
+
+    <style>
+/* background-color: #e8edf7; */
+
+ :root {
+  --active_color:  #a60146;
+  --main_background:  #101a2f;
+  --objeto_background: #262f4c;
+  --gap: 20px;
+  --radius: 10px;
+} 
+/*  :root {
+  --main_background:  #e3e9ec; 
+  --objeto_background: white;
+} 
+ */
+.active{
+  background-color:  var(--active_color);
+}
+main{
+  background-color: var(--main_background);
+}
+.objeto{
+  background-color: #333450;
+    height: 200px;
+    width: 50%;
+    width: 50%;
+ 
+    border-radius: var(--radius);
+ /*    margin-right: 7px;
+    margin-left: 7px; */
+}
+.dos_columnas{
+  display: flex;
+  margin: var(--gap);
+  gap: var(--gap);
+}
+.tres_columnas{
+  display: flex;
+  margin: var(--gap);
+  gap: var(--gap);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.objeto_dos_columnas{
+  background-color: var(--objeto_background);
+  min-height: 10px;
+  overflow: hidden;
+  width: 32%;
+  border-radius: 6px;
+  border-radius: var(--radius);
+  transition: all  1s;
+}
+
+.objeto_tres_columnas{
+  background-color: var(--objeto_background);
+  background-color: #0c111e;
+  background-color:   #18243c;
+  min-height: 50px;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  width: 22.5%;
+}
+.objeto_tres_columnas img{    transition: transform 1.5s ease; }
+.objeto_tres_columnas:hover img{    transform: scale(1.2);  object-fit: cover;}
+
+
+#experimento{
+/*   width: var(--card-width);
+    height: var(--card-height); */
+
+  /*   height:calc( 100vw / 2.4); /*   16:9 */
+  height:calc( 100vw / 4.3);
+  width:  100%;
+  background-color: #2b2d38;
+  background-image: url("runescape_1.png");
+  background-position: center;
+  background-size: cover;
+  transition: height 1.5s;
+}
+
+
+sidebar{
+  transition: all  1s;
+  position: fixed;
+  width: 260px;
+  top: 0px;
+  left: 0px;
+}
+main{
+  transition: all  1s;
+  margin-left: 260px;
+  display: inline-table;
+}
+h3{
+  color: #a60146;
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+.testo{
+  padding: 35px;
+    padding-top: 0px;font-size: 1.1em;
+    color: #92a1ae;
+    color: #87aac97a;
+}
+
+@media only screen and (max-width: 1050px) { .objeto_tres_columnas{width: 31%;}}
+@media only screen and (max-width: 1100px) { .objeto_tres_columnas{width: 48%;}}
+@media only screen and (max-width: 1000px) {
+  sidebar{ top: 0px; left: -260px;}
+  main{ margin-left: 0px; width: 100%;}
+}
+@media only screen and (max-width: 600px) {
+  .dos_columnas, .tres_columnas {flex-wrap: wrap;}
+  :root { --gap: 15px;} 
+}
+    </style>
+  </head>
+  <body>
+    <sidebar>
+      <img src="logo.png" style="width: 100%;margin-top: 22px;margin-bottom: 16px;">
+      <separador></separador>
+      <sidebar_links>
+        <a class="active"> Item 1 </a>
+        <a> Item 2 </a>
+        <a> Item 3 </a>
+      </sidebar_links>
+      <separador></separador>
+
+    </sidebar>
+
+<!-- <sidebar_width></sidebar_width> -->
+    <main> 
+   <!--    <banner> <banner_content> banner </banner_content> </banner>
+     <!--  <cards>
+        <card> card 1 </card>
+        <card> card 2 </card>
+        <card> card 3 </card> -->
+        <!-- <div id="experimento"></div> -->
+<img src="tenticle-head-games-logo-large.jpg" style="width: 100%; height: 337px; object-fit: cover;"">
+
+<!--  <div style="background-color: #3982cd;height: 80px;margin: var(--gap);border-radius: 6px;"></div>  -->
+ <div class="tres_columnas" > 
+  <div class="objeto_tres_columnas">
+    <div style="overflow: hidden;">    <img src="thumb_2.png" style="width: 100%;height: auto;"></div>
+
+    <h3>Titulo</h3>
+    <div class="testo">I’ve had the honour of working with some of the greatest Indie developers over the past 10+ years, but there’s one name. </div>
+    </div>
+  <div class="objeto_tres_columnas">
+    <div style="overflow: hidden;">    <img src="thumb_4.png" style="width: 100%;height: auto;"></div>
+    <h3>Titulo</h3>
+    <div class="testo"> Getting the opportunity to work with the creators of the legendary Shovel Knight was simply incredible. </div>
+    </div>
+    <div class="objeto_tres_columnas">
+      <div style="overflow: hidden;">    <img src="thumb_1.png" style="width: 100%;height: auto;"></div>
+      <h3>Titulo</h3>
+      <div class="testo"> Getting the opportunity to work with the creators of the legendary Shovel Knight was simply incredible. </div>
+      </div>
+  
+      <div class="objeto_tres_columnas">
+        <div style="overflow: hidden;">    <img src="thumb_5.png" style="width: 100%;height: auto;"></div>
+        <h3>Titulo</h3>
+        <div class="testo"> Getting the opportunity to work with the creators of the legendary Shovel Knight was simply incredible. </div>
+        </div>
+
+
+</div>
+
+   <!--    <div class="dos_columnas" > 
+        <div class="objeto_dos_columnas">
+          <img src="1.png" style="width: 100%;height: auto;">
+        </div>
+        <div class="objeto_dos_columnas"> <img src="2.png" style="width: 100%;height: auto;"></div>
+      </div>
+ -->
+ 
+    </main>
+</body>
+</html>
+
