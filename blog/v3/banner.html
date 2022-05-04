@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<style>
+  /* para evitar que el padding cambie el with */
+* { 
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+   box-sizing: border-box; 
+}
+body{ margin: 0;}
+
+banner{
+  width: 100%;
+  overflow: hidden;
+  display: block;
+    background-color: #17223a;
+    display: flex;
+    justify-content: center;
+    transition: all 1.5s;
+    background-image: url(https://julif.github.io/img/banner_background.png);
+    background-position: right;
+    background-position: center;
+}
+banner img{
+  height: 100%;
+    width: auto;
+    max-width: 100%;
+    padding: 20px;
+
+  
+}
+
+
+@media only screen and (max-width: 900px){ 
+  
+  banner{
+    padding: 150px;
+    max-width: initial;
+    padding: 50px;
+    padding-left: 0px;
+    padding-right: 0px;
+   
+}
+
+}
+</style>
+</head>
+<body>
+  <banner><img src="julif_logo_small.png"></banner>
+
+</body>
+</html>

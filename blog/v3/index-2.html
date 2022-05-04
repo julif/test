@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<style>
+  body{ margin: 0;}
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "proxima-nova",sans-serif;
+    background-color: #0a0a18;
+}
+
+container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+main {
+    flex-grow: 1;
+}
+
+main, footer {
+    flex-shrink: 0;
+}
+
+
+main{
+  background-color: #101a2f;
+  background-color: white;
+}
+footer{
+  background-color: #0a0a18;
+    padding: 20px;
+    color: #37445e;
+    text-align: center;
+   
+    font-weight: 600;
+}
+articles{
+  display: block;
+  max-width: 1500px ;
+  max-width: 900px ;
+  padding: 25px ;
+  margin: 0px auto;
+}
+article{
+  /* padding: 25px;
+  background-color: #152138; */
+  border-radius: 10px;
+
+  text-align: center;
+  
+
+}
+
+h1{
+  color: white;
+  color: black;
+  font-size: 2.7em;
+}
+p{
+  color: #4c627d;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+banner{
+
+
+    height: calc( 100vw / 5.3);
+    height: calc( 100vw / 7.5);
+    width: 100%;
+    display: block;
+    background-color: red;
+    background-color: #2b2d38;background-color: #0a0a18;
+
+    background-image: url(tenticle-head-games-logo-large.jpg);
+    background-image: url(julif_logo_large.png), url(    https://julif.github.io/img/banner_background.png);
+    background-image: url(julif_logo_large_2.png), url(    https://julif.github.io/img/banner_background.png);
+    background-position: center;
+    background-size: cover;
+    transition: height 1s;
+/*     box-shadow: inset 0 0 10px 2px #1e020e9e; */
+}
+
+ @media only screen and (max-width: 900px){ banner{
+    /* height: calc( 100vw / 2.3); */
+    /* height: 400px; */
+  
+    /* transform: scale(1.1); */
+    height: 40vw;
+    background-size: 200%;
+}}
+ 
+</style>
+</head>
+<body>
+  <container>
+
+    <main> 
+    <!--  <img src="tenticle-head-games-logo-large.jpg" style="width: 100%; height: 337px; object-fit: cover;" "=""> -->
+    <banner></banner>
+     <content>
+       <articles>
+        <article>
+          <h1>Titulo </h1>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam ex urna, vel vehicula lorem ullamcorper eu. Nulla nec congue metus. Sed sit amet justo interdum enim euismod convallis. In eu tincidunt dui. Aliquam condimentum condimentum dictum. Vestibulum eu interdum dolor. Etiam quis ultricies est. Proin sed elit vestibulum, feugiat enim vitae, tempor elit. Duis rhoncus ante ante. Etiam malesuada magna pulvinar sollicitudin maximus. Ut rhoncus nisi ut enim semper, eget maximus orci volutpat. Sed ac nunc felis. Suspendisse varius risus vitae tempus congue. Etiam sed commodo nisl. </p>
+        </h1>
+       </articles>
+
+     </content>
+
+    </main>
+    <footer> © Julif </footer>
+  </container>
+
+</body>
+</html>
