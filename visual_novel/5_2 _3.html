@@ -10,6 +10,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <style>
+  :root{
+    --stroke-pos: 1px;
+    --stroke-neg: -1px;
+    --stroke-color: white;
+  }
   body{
     margin: 0px auto;
     font-family: "proxima-nova",sans-serif;
@@ -59,6 +64,8 @@
 .active{
   filter: brightness(0.6) grayscale(0.2);
   margin-top: 5%;
+
+  --stroke-color: red;
   
 
 }
@@ -81,6 +88,10 @@
     /* width: auto; */
     display: flex;
     justify-content: center;
+
+
+    filter: drop-shadow(var(--stroke-pos) 0 0 var(--stroke-color)) drop-shadow(var(--stroke-neg) 0 var(--stroke-color)) drop-shadow(0 var(--stroke-pos) 0 var(--stroke-color)) drop-shadow(0 var(--stroke-neg) 0 var(--stroke-color)) drop-shadow(var(--stroke-pos) var(--stroke-pos) 0 var(--stroke-color)) drop-shadow(var(--stroke-pos) var(--stroke-neg) 0 var(--stroke-color)) drop-shadow(var(--stroke-neg) var(--stroke-pos) 0 var(--stroke-color)) drop-shadow(var(--stroke-neg) var(--stroke-neg) 0 var(--stroke-color));
+
 }
 #texto_container {
     /* background-color: black; */
