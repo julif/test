@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  body{
+    margin: 0px auto;
+    font-family: "proxima-nova",sans-serif; 
+    min-height: -webkit-fill-available;
+
+
+  }
+  #contenedor {
+    height: 100%;
+    width: 100%;
+    background-color: #191525;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+  aspect_ratio_container {
+    background-image: url("img/full_background4.png"); 
+     background-size: cover;
+    margin: auto;
+
+    aspect-ratio: 25.8/9;
+    height: 56.25vw;
+    max-height: 100%;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aspect_ratio {
+
+  background-image: url("img/1080.png"); 
+  background-size: cover;
+    display: block;
+    height: 100%;
+    aspect-ratio: 16/9;
+}
+
+/*   @media screen and (orientation:portrait) { aspect_ratio {       aspect-ratio: 25.69/9;
+    height: 56.25vw;
+    max-height: 100%; }} */
+
+    /*
+ @media (min-aspect-ratio: 1/1) { aspect_ratio { width: 100%; height: auto;  aspect-ratio: 25.7/9; }}
+ @media (min-aspect-ratio: 2/1) {aspect_ratio { height: 100%; width: auto;  aspect-ratio: 25.7/9; }} */
+
+
+
+</style>
+</head>
+<body>
+  <div id="contenedor">
+    <aspect_ratio_container>
+      <aspect_ratio>
+
+      </aspect_ratio>
+    </aspect_ratio_container>
+  </div>
+
+
+</body>
+
+</html>
