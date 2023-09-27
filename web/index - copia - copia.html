@@ -1,0 +1,48 @@
+<html  lang=es>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<style>
+  body{  margin: 0;
+    padding: 0;
+}
+
+.orange {
+    background: #f99e50;
+}
+.red {
+    background: #f97171;
+}
+  /* container */
+.right-sidebar {
+    display:flex;
+  
+}
+
+/* columns */
+.right-sidebar > * {
+    width:100%;
+    padding:1rem;
+}
+
+/* tablet breakpoint */
+@media (min-width:768px) {
+    .right-sidebar > *:nth-child(1) {
+        width:calc(100% / 3 * 2);
+    }
+    .right-sidebar > *:nth-child(2) {
+        width:calc(100% / 3);
+    }
+}
+
+</style>
+    </head>
+    <body>
+   
+<div class="right-sidebar">
+    <div class="orange">Main content</div>
+    <div class="red">Right sidebar</div>
+</div>
+    </body>
+    </html>
+</html>

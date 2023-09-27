@@ -1,0 +1,388 @@
+ /*    banner */
+ banner{
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  display: grid;
+  /* justify-content: center; */
+  align-items: center;
+  background-color: #0a0a18;
+    /* min-height: 95vh; */
+    /* min-height: 15vh; */
+    height: 85px;
+    position: relative;
+
+    box-shadow: inset rgb(0 0 0 / 22%) 0px 0px 40px 0px, inset rgb(0 0 0 / 9%) 0px 0px 40px 0px, inset rgb(0 0 0 / 17%) 0px 0px 36px 51px;
+
+
+}
+.avegas-overlay {
+  opacity: .2;
+  opacity:1;
+  background: url(https://julif.github.io/img/05.png) center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+
+}
+#banner-background {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+   /* background-color: red;  */
+}
+banner nav {
+position: absolute;
+top: 0;
+right: 0;
+color: white;
+padding: 30px;
+padding-right: 30px;
+font-size: 17px;
+text-transform: uppercase;
+display: flex;
+font-weight: 600;
+}
+banner nav a{
+text-decoration: none;
+color: white;
+padding: 10px;
+transform: scale(1, 1.1);
+font-family: system-ui; 
+opacity: 0.6; text-align: center;
+position: relative;
+z-index: 500;
+}
+nav a:hover{
+opacity: 1; 
+}
+nav  a::after {
+content: ' ';
+
+background-color: white;
+height: 2px;
+width: 0%;
+left: 50%;
+display: flex;
+transition: all 0.2s ease;
+position: absolute;
+bottom: -2px;
+}
+.nav_link:hover>  a::after {
+content: ' ';
+background-color: white;
+height: 2px;
+width: 100%;
+left: 0%;
+display: flex;
+position: absolute;
+bottom: -2px;
+left: 0%;
+
+}
+
+
+
+
+
+
+
+
+.hamburger {
+display: inline-block;
+/* height: 26px; */
+/* margin-right: 27px; */
+z-index: 100;
+display: block;
+cursor: pointer;
+height: 22px;
+width: 30px;
+position: absolute;
+top: 33px;
+left: 26px;
+
+}
+.hamburger a.main-nav-toggle {
+
+display: block;
+width: 28px;
+height: 16px;
+/* left: 20px; */
+position: absolute;
+
+
+}
+.hamburger a.main-nav-toggle:after, .hamburger a.main-nav-toggle:before {
+content: '';
+position: absolute;
+top: 0;
+height: 0;
+border-bottom: 4px solid white;
+width: 100%;
+left: 0;
+right: 0;
+transition: all ease-out 0.3s;
+}
+.hamburger a.main-nav-toggle:after {
+top: 100%;
+}
+.hamburger a.main-nav-toggle i {
+display: block;
+text-indent: 100%;
+overflow: hidden;
+white-space: nowrap;
+height: 4px;
+background-color: white;
+width: 100%;
+position: absolute;
+top: 50%;
+transition: all ease-out 0.1s;
+}
+
+
+.active-menu a.main-nav-toggle:before {
+
+/* border-bottom: 4px solid red; */
+transform: rotate(-45deg);
+top: 50%;
+}
+.active-menu a.main-nav-toggle:after {
+
+/* border-bottom: 4px solid red; */
+transform: rotate(45deg);
+top: 50%;
+}
+.active-menu a.main-nav-toggle i {
+opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contenido {
+  display: block;
+  margin: 0px auto;
+  max-width: 1200px;    z-index: 2;
+}
+banner h1 {
+  font-family: "Staatliches", sans-serif;
+  font-size: 7.5em;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-weight: 100;
+  line-height: 0.85em;
+  margin-bottom: 15px;
+  opacity: 0;
+  animation-name: bounceIn;
+  animation-duration: 450ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+  text-align: center;
+}
+@media only screen and (max-width: 768px){
+banner h1 {
+    margin-bottom: 30px;
+}
+}
+
+banner #social_links_container {
+  display: flex;
+  justify-content: space-between;
+  justify-content: space-around;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 5px;
+  margin-bottom: 25px;
+  margin-top: 7px;
+}
+#social_links_container a {
+  padding: 6px;
+  padding-top: 11px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 9px;
+  border-radius: 6px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+  /* background-color: #1b1c2b!important; */
+  opacity: 0;
+  animation-name: bounceIn;
+  animation-duration: 450ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+#social_links_container a:hover {
+  outline: 2px solid white;
+}
+#twitter_btn {
+  background-color: #2daae2;
+  fill: white;
+  animation-delay: 1s;
+  }
+  #facebook_btn {
+  background-color: #4064ac;
+  fill: white;
+  animation-delay: 1.10s;
+  }
+  #github_btn {
+  background-color: #1b1c2b;
+  fill: white;
+  animation-delay: 1.20s;
+  }
+  #instagram_btn {
+  background-color: #b12388;
+  fill: white;
+  animation-delay: 1.30s;
+  }
+  #kofi_btn{
+  display: block;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  
+
+
+ /* background-color: #1b1c2b!important; */
+ opacity: 0;
+animation-name: bounceIn;
+animation-duration: 450ms;
+animation-timing-function: linear;
+animation-fill-mode: forwards;
+animation-delay: 2.00s;
+
+
+/* background-color: #17bee5;
+padding: 0px;
+width: fit-content;
+margin: auto;
+
+cursor: pointer;
+ */
+}
+/* #kofi_btn img {
+height: 55px;
+margin-left: 15px;
+margin-right: 15px;
+} */
+
+#btn_kofi{
+
+  display: inline-block!important;
+  white-space: nowrap;
+  min-width: 160px;
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+  /* line-height: 35px!important; */
+  min-width: 180px;
+  display: inline-block!important;
+  background-color: #29abe0;
+  padding: 12px 1px !important;
+  text-align: center !important;
+  /* border-radius: 12px; */
+  color: #fff;
+  cursor: pointer;
+  overflow-wrap: break-word;
+  vertical-align: middle;
+  border: 0 none #fff !important;
+  font-family: 'Nunito',sans-serif;
+  /* font-family: 'Quicksand',Helvetica,Century Gothic,sans-serif !important; */
+  text-decoration: none;
+  text-shadow: none;
+  font-weight: 700!important;
+  font-size: 18px !important;
+  /* background-image: url(../cofee-btn-background.svg); */
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+}
+#btn_kofi:hover{ outline: 2px solid white;
+}
+.kofitext img.kofiimg {
+  height: 15px!important;
+  width: 22px!important;
+  display: initial;
+  animation: kofi-wiggle 3s infinite;
+}
+.kofitext img.kofiimg {
+height: 18px !important;
+  width: 33px !important;
+  display: initial;
+  font-weight: bold;
+  margin-left: 46px;
+  padding-right: 10px;
+}
+img.kofiimg {
+  display: initial!important;
+  vertical-align: middle;
+  height: 13px!important;
+  width: 20px!important;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+  border: none;
+  margin-top: 0;
+
+  margin-left: 0!important;
+  margin-bottom: 3px!important;
+ 
+}
+span.kofitext {
+  color: #fff !important;
+  letter-spacing: -0.15px!important;
+  text-wrap: none;
+  vertical-align: middle;
+  line-height: 33px !important;
+  padding: 0;
+  text-align: center;
+  text-decoration: none!important;
+  text-shadow: 0 1px 1px rgba(34, 34, 34, 0.05);
+}
+
+
+@keyframes kofi-wiggle{
+0% {
+  transform: rotate(0) scale(1);
+}
+60% {
+  transform: rotate(0) scale(1);
+}
+75% {
+  transform: rotate(0) scale(1.12);
+}
+80% {
+  transform: rotate(0) scale(1.1);
+}
+84% {
+  transform: rotate(-10deg) scale(1.1);
+}
+88% {
+  transform: rotate(10deg) scale(1.1);
+}
+92% {
+  transform: rotate(-10deg) scale(1.1);
+}
+96% {
+  transform: rotate(10deg) scale(1.1);
+}
+100% {
+  transform: rotate(0) scale(1);
+}
+}

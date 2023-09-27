@@ -1,0 +1,13 @@
+.mobile-only {
+  display: none;
+}
+
+@media only screen and (max-width: 750px){
+
+.mobile-only {
+  display: inherit;
+}
+.desktop-only {
+display: none;
+}
+}

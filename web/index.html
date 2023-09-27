@@ -1,0 +1,461 @@
+<html  lang=es>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title> Julif.github.io </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="stylesheet" href="css/animaciones.css">
+    <link rel="stylesheet" href="css/sidenav.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="vegas.min.css">
+    <script src="vegas.min.js"></script>
+    <style>
+
+
+.sidenav-open {
+    overflow: hidden;
+    position: fixed;
+}
+
+
+      /*reemplazar en banner eventualmente*/
+banner{
+  background-color:    #090b18;
+
+
+  min-height: 95vh;
+  /* background-image: url(img/banner_background_3.png); 
+  background-image: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXFydTB6aTAzc3BvZGhhcXo3Y2xucWszamIwNWs0dWg3ZDZ5amo2dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tMrQOx67hSwu6idlSj/giphy.gif); 
+  background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-blend-mode: overlay; */
+    /* background-color:      #101428; */
+    
+}
+
+
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  /* background: rgba(90, 90, 90); */
+  background:  #6e6e6e7a;
+
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  background: transparent;
+}
+
+
+
+
+
+
+     /*    footer */
+     footer {
+    color: #71748bfc;
+    background-color: #010101;
+    background-color: #090b18;
+    padding: 40px;
+    text-align: center;
+    font-weight: 600;
+    padding-top: 80px;
+    line-height: 35px;
+}
+footer a {
+    opacity: 0.7;
+}
+footer a:hover {
+    opacity: 1;
+}
+.multilinks a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffffff8c;
+    margin: 10px;
+}
+footer #social_links_container_footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+footer #social_links_container_footer a {
+    background-color: transparent;
+}
+footer svg {
+    fill: white;
+}
+footer linea {
+    height: 3px;
+    display: block;
+    background-color: #ffffff17;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    
+}
+
+
+
+
+section{
+  background-color: #f3f8ff;
+    min-height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section_content{
+  text-align: center;
+    max-width: 1500;
+    display: flex;
+    /* background-color: white; */
+    /* padding: 15px; */
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    gap: 30px;
+
+    display: flex;
+    align-items: center;
+  
+max-width: 1500;
+
+}
+.reverse_wrap{ flex-wrap: nowrap; }
+#shacta_img{       
+  width: 100%;
+  transform: scale(1.2); 
+  
+  transform-origin: bottom;
+  margin: 0px;
+  position: relative;
+  z-index: 4;
+  }
+
+  .juju{
+    padding: 25px;
+ background-color: #090b18;
+ position: relative;
+ /* margin-left: 15px; */
+  }
+ #go_to_comission_btn{
+  /* position: absolute; */
+    bottom: -11px;
+
+    bottom: -29px;
+    background-color: #29abe0;
+    color: white;
+    padding: 14px 32px;
+    font-size: 18px;
+    /* margin: -43px -35px 0 0; */
+    /* left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); */
+    /* border: navajowhite; */
+    border: solid #fefefe 2px;
+    cursor: pointer;
+
+    border: none;
+    border-radius: 5px;
+
+}
+#go_to_comission_btn:hover {
+    outline: 2px solid white;
+}
+
+  .jojo{
+    width: auto;
+  }
+section_content h2{ font-size: 45px;
+    margin: 20px;}
+
+
+
+
+
+
+
+    @media only screen and (max-width:1597px){
+   
+      section{    padding: 20px;}
+      #shacta_img{       transform: scale(1);   background-color: #945e20;}
+}
+
+
+    @media only screen and (max-width:1338px){
+
+      .jojo{
+    width: 190%;
+
+  }
+      #shacta_img{       transform: scale(1);   background-color: #945e20;}
+      section{    padding: 20px;}
+
+}
+@media only screen and (max-width: 750px){
+
+section{    padding: 20px;     overflow: hidden;}
+  .juju{
+    padding-top: 0px; margin-left:0px;
+  }
+
+
+  section_content{
+ 
+    flex-wrap: wrap;  gap: 0px;
+    /* padding-top: 60px;
+    padding-bottom: 60px; */
+ 
+}
+.reverse_wrap{ flex-wrap: wrap-reverse; }
+#shacta_img{       transform: scale(1); margin: 0px;  background-color: transparent;  }
+
+}
+
+    </style>
+    </head>
+    <body id="body" onresize="close_sidenav_on_desktop()">
+
+
+      <sidenav id="sidenav" class="mobile-only">
+        <!--       <div id="sidenav_banner">  <img src="logo.png" style="  width: 100%;margin-top: 10px;"> </div>  -->
+        <div id="sidenav_content">   
+          <!-- <separador></separador> -->
+          <a>Blog</a>
+          <a>Comisiones</a>
+          <separador></separador>
+        </div>
+        <div id="sidenav_footer">
+          <separador></separador>
+          <div id="social_links_sidenav">
+            <a href="https://twitter.com/julian_julif" id="twitter_btn"> <!-- twitter --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24 " viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg> </a> 
+            <a href="https://www.facebook.com/JulifIsBetterThanYourMom/" id="facebook_btn"> <!-- facebook --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24 " viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg> </a> 
+            <a href="https://github.com/julif" id="github_btn"> <!-- github --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24 " viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg> </a> 
+            <a href="https://www.instagram.com/_julif_/" id="instagram_btn"> <!-- instagram --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24 " viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg> </a>
+          </div>
+        </div>
+      </sidenav>
+
+
+
+      <main_container id="main_container">
+        <main>
+          <banner>
+      
+            <mobile_nav id="mobile_nav_hamburger_btn" class="hamburger mobile-only" onclick="toggleSidenav(this)">
+              <a class="main-nav-toggle" href="#main-nav"><i>Menu</i></a>
+            </mobile_nav>
+            <nav class="desktop-only">
+              <div class="nav_link"> <a href="https://juli22f.blogspot.com/">Blog</a></div>
+              <div class="nav_link"> <a href="comissions/index.html">Comisiones</a></div>
+            </nav>
+            <div class="avegas-overlay"></div>
+            <div class="contenido">
+
+              <!--    <div style="position: absolute;top: 21px;left: 19px;-webkit-clip-path: polygon(0 3%,0 33%,1.5% 45%,2% 99%,53% 97%,100% 100%,99.5% 70%,98% 44%,99% 1%,65% 3%,36% 1%);height: 74px;width: 73px;background-color: #000000;color: #fff5f5;display: flex;font-size: 3em;transform: rotate(0.99turn);offset-rotate: 10px;justify-content: center;align-items: center;font-family: &quot;Staatliches&quot;, sans-serif;"> JF</div> -->
+                 <h1> Julif </h1>
+                 <div id="social_links_container" class="box">
+                   <a href="https://twitter.com/julian_julif" id="twitter_btn"> <!-- twitter --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24 " viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg> </a> 
+                   <a href="https://www.facebook.com/JulifIsBetterThanYourMom/" id="facebook_btn"> <!-- facebook --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24 " viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg> </a> 
+                   <a href="https://github.com/julif" id="github_btn"> <!-- github --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24 " viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg> </a> 
+                   <a href="https://www.instagram.com/_julif_/" id="instagram_btn"> <!-- instagram --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24 " viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg> </a>
+                 </div>
+                 <a href="https://ko-fi.com/julif" id="kofi_btn">
+         
+         
+                   <div id="btn_kofi"> 
+             
+                     <!-- <span class="kofitext"><img src="cup-border.webp" alt="Ko-fi donations" class="kofiimg">Buy Me a Coffee </span> -->
+                     <span class="kofitext"><img src="cup-border.webp" alt="Ko-fi donations" class="kofiimg">Support Me </span>
+                     
+             </div>
+                 </a>
+               </div>
+               <div  id="banner-background"></div>
+          </banner>
+          <content>
+
+
+
+
+
+
+
+
+
+
+
+            <section style="
+         
+            background-color: #e79d2e;
+            color: white;
+            background-image: url(img/commissions_banner_background_2.png);
+        "><section_content  class="reverse_wrap">
+    
+    
+
+         
+              <div  class="juju" ><h2>Comisiones abiertas</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam ex urna, vel vehicula lorem ullamcorper eu. Nulla nec congue metus. Sed sit amet justo interdum enim euismod convallis. In eu tincidunt dui. Aliquam condimentum condimentum dictum. Vestibulum eu interdum dolor. </p>
+              
+        <!--        <div style="height: 3px;
+               display: block;
+               background-color: #ffffff17;
+               margin-top: 25px;
+               margin-bottom: 25px;"></div> -->
+                <button id="go_to_comission_btn"> ir a la pagina de comisiones </button>
+              
+              </div>
+           
+              <div  class="jojo"> <img id="shacta_img" src="img.png"></div>
+      
+            </section_content> </section>
+
+
+
+
+
+
+
+
+
+
+
+            
+        <section> <section_content style="    padding: 25px; max-width: 1200px;">
+
+
+          <div > <img  style="    width: 280px;  height: auto;" src="img/foto.jpg"></div>
+          <div>
+            
+            <h2>Sobre mi</h2>
+
+            <p>Mi nombre es Julian Filardi soy un ilustrador y desarollador web front end argentino.</p>
+            <p>Me especializo en crear temas de wordpress y pequeños juegos simples para navegador en javascript.</p>
+           
+          </div>
+       
+        </section_content> </section>
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+     
+          </content>
+          <div>
+
+          </div>
+        </main>
+    
+      <footer>   <div style="margin-bottom: 40px;" class="multilinks">
+        <a href="https://ko-fi.com/julif?fbclid=IwAR0gsI_8fK69GiAkQN5ZuF9_I0KUtzE8O6pDQu3efmkIXndPeFl4FYv_kK8"> ko-fi </a>
+<a href="https://twitter.com/julian_julif"> Twitter </a>
+<a href="http://juli22f.blogspot.com.ar/"> Blogspot </a>
+     <a href="https://www.deviantart.com/julif-art"> Deviantart </a>
+       <a href="https://www.youtube.com/channel/UCwtSWyoOXwwfbeekdgmJKew"> Youtube </a>
+        <a href="https://julif-art.tumblr.com/"> Tumblr </a>
+        <a href="https://www.instagram.com/_julif_/"> Instagram </a>
+        <a href="https://www.artstation.com/julif"> Artsation </a>
+        <a href="https://www.designbyhumans.com/shop/julif/"> Designbyhumans </a>
+      </div>
+      <div id="social_links_container_footer" class="box">
+        <a href="https://twitter.com/julian_julif" id="twitter_btn"> <!-- twitter --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24 " viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg> </a> 
+        <a href="https://www.facebook.com/JulifIsBetterThanYourMom/" id="facebook_btn"> <!-- facebook --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24 " viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg> </a> 
+        <a href="https://github.com/julif" id="github_btn"> <!-- github --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24 " viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg> </a> 
+        <a href="https://www.instagram.com/_julif_/" id="instagram_btn"> <!-- instagram --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24 " viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg> </a>
+      </div>
+    <linea></linea>
+    <div> © Julif </div></footer>
+    </main_container>
+    </body>
+
+    <script>
+      
+
+function toggleSidenav(a){
+   
+   if ( a.classList.contains("active-menu") ) {
+    document.getElementById("mobile_nav_hamburger_btn").classList.remove("active-menu");
+    document.getElementById("sidenav").classList.remove("active-menu");
+    document.getElementById("main_container").classList.remove("active-menu");
+    document.getElementById("body").classList.remove("sidenav-open"); 
+/*     document.getElementById("sidenav").classList.remove("active-menu");
+    document.getElementById("main").classList.remove("active-menu");
+    document.getElementById("body").classList.remove("sidenav-open"); */
+
+ 
+  } else {
+    document.getElementById("mobile_nav_hamburger_btn").classList.add("active-menu");
+    document.getElementById("sidenav").classList.add("active-menu");
+    document.getElementById("main_container").classList.add("active-menu");
+    document.getElementById("body").classList.add("sidenav-open"); 
+/*     document.getElementById("sidenav").classList.add("active-menu");
+    document.getElementById("main").classList.add("active-menu");
+    document.getElementById("body").classList.add("modal-open"); */
+
+  }
+
+
+
+ }
+ function close_sidenav_on_desktop(){
+
+    
+if (screen.width  > 751) {
+  document.getElementById("mobile_nav_hamburger_btn").classList.remove("active-menu");
+document.getElementById("sidenav").classList.remove("active-menu");
+document.getElementById("main_container").classList.remove("active-menu");
+}
+
+
+}
+    </script>
+
+<script> 
+  $(function() {
+    $('#banner-background').vegas({
+  
+    timer: false,
+
+    transition: 'fade',
+    delay: 20000,
+    animation: [ 'kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight' ],
+
+
+    transitionDuration: 'auto',
+        slides: [
+            { src: 'img1.png' },
+            { src: 'img2.png' },
+            { src: 'img3.png' }
+        ]
+           
+    });
+});
+</script> 
+
+    </html>
+</html>

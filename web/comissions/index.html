@@ -1,0 +1,505 @@
+<html>
+  <head>
+    <title> Julif commissions </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+    /* :root { --sidenav_width: 30vw;} */
+     body{
+      margin: 0px auto;
+      margin: 0px;
+      font-family: "proxima-nova",sans-serif;
+
+      padding: 0;
+    margin: 0;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #606c71;
+    background-color: #e2e8f1;
+
+
+    
+    }
+
+    main{
+      max-width: 900px;
+    margin: 0px auto;
+    font-size: 1.1rem;
+    background-color: white;
+    padding: 25px;
+    box-sizing: border-box;
+    padding-top: 5px;
+    margin: 20px auto;
+  }
+
+
+    img{
+      height: 200px;
+      width: auto;
+    }
+
+    .thumbs{display: flex;    justify-content: center;     gap: 5px;}
+    .thumbs img{
+      cursor: pointer;
+    }
+
+
+
+@media only screen and (max-width: 720px) {
+  main {
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    padding-top: 5px;
+  margin: 0px auto; 
+}
+
+    .thumbs{  display: block; text-align: center;}
+ 
+    img{    width: 100%;
+    height: auto;
+    margin: 3px;
+}
+}
+
+
+
+svg{
+  fill: white;
+}
+    </style>
+  </head>
+  <body id="body">
+    <style>
+
+
+      #comission_banner{
+        background-color: #e79d2e;
+        background-image: url(../img/commissions_banner_background_2.png);
+        overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-position: center;
+          background-size: cover;
+          min-height: 350px;
+          position: relative;
+      }
+      #comission_banner h2{
+
+        text-align: center;
+    margin-top: 0px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+
+
+      margin: 0px;
+      font-size: 4.0em;
+      background-color: #0d0e18;
+          padding: 40px;
+      }
+      #nix_comssions{
+        height: 100%;
+          right: 0;
+          right: -7px;
+          top: 7px;
+          position: absolute;
+          /* animation: shaki-shake 0.2s infinite; */
+          animation: 0.4s linear 0s infinite normal both running vibrate-2;
+      }
+      @keyframes vibrate-2 {
+      
+      0%, 100% {
+          -webkit-transform: translate(0);
+          transform: translate(0);
+      }
+      
+      20% {
+          -webkit-transform: translate(2px,-2px);
+          transform: translate(2px,-2px);
+      }
+      40% {
+          -webkit-transform: translate(2px,2px);
+          transform: translate(2px,2px);
+      }
+      60% {
+          -webkit-transform: translate(-2px,2px);
+          transform: translate(-2px,2px);
+      }
+      80% {
+          -webkit-transform: translate(-2px,-2px);
+          transform: translate(-2px,-2px);
+      }
+      } 
+      
+      
+      @media only screen and (max-width:1350px){
+        #comission_banner h2 {
+        margin-bottom:200px;
+          margin-top: 130px;
+          font-size: 2.7em;
+        }
+        #nix_comssions{ height: 58%;
+          right: 0;
+          right: -7%;
+          top: auto;
+          bottom: -7%;
+          width: auto;
+        }
+      }
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modal-open{
+    /* block scroll for mobile; */
+    /* causes underlying page to jump to top; */
+    /* prevents scrolling on all screens */
+    overflow: hidden;
+    /* position: fixed; */
+}
+
+
+
+
+
+
+
+
+
+      .row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Create four equal columns that floats next to eachother */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000000eb;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+
+  margin: auto;
+  padding: 0;
+  width: 95%;
+ 
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  z-index: 100;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+
+  display: block;
+
+    /* position: absolute; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+          </style>
+   
+           <section  id="comission_banner" >
+            <!-- comissiones -->
+            <h2 style="color: white;">Commissions  Open </h2>
+            <img id="nix_comssions" src="../img/nix_two_soyjaks.png">
+           </section>
+        
+    <main>
+      <h1 style="text-align: center;"> Commission chart </h1>
+
+
+ <!--      <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b66f10b3-1a0a-4898-acea-6730d9dff843/dfry1ua-2769c42d-6322-4163-b0c3-c84ab75b065b.png/v1/fill/w_1192,h_670,q_70,strp/comission_open_by_julif_art_dfry1ua-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvYjY2ZjEwYjMtMWEwYS00ODk4LWFjZWEtNjczMGQ5ZGZmODQzXC9kZnJ5MXVhLTI3NjljNDJkLTYzMjItNDE2My1iMGMzLWM4NGFiNzViMDY1Yi5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.HHCyEuVOgggoL3ywNd7U-35wPeYyie00EiTGxpyMAmU"  style="
+    width: 100%;
+    height: auto;
+"> -->
+
+
+      <p>Hi, and thank you for choosing my art!&nbsp; </p>
+      <p>You can contact me by you can contact me via email at <a href="mailto:julif-@live.com">julif-@live.com</a></p>
+    
+      <p> <b>I do:</b></p>
+      <ul style="text-align: left;">
+        <li> SFW </li>
+        <li> NSFW and kinks </li>
+      </ul>
+      <p><b>I don't do:</b></p>
+      <ul style="text-align: left;">
+        <li> Full comics </li>
+        <li> Anything hateful towards anyone or a group.</li>
+      </ul>
+    
+      
+      <h2><b>Prices:</b></h2>
+
+      <p><b> Bust without background : $15 USD </b></p>
+      <div class="thumbs">
+        <img onclick="openModal();currentSlide(1)" class="hover-shadow" src="img/bust_example_1.png"></a>
+        <img onclick="openModal();currentSlide(2)" class="hover-shadow" src="img/bust_example_2.jpg"></a>
+        <img onclick="openModal();currentSlide(3)" class="hover-shadow" src="img/bust_example_3.jpg"></a>
+       
+      </div>
+      <p><b> Half body without background: $25 USD </b></p>
+      <div class="thumbs">
+        <img onclick="openModal();currentSlide(4)" class="hover-shadow" src="img/half_body_example_1.png"></a>
+        <img onclick="openModal();currentSlide(5)" class="hover-shadow" src="img/half_body_example_2.png"></a>
+        <img onclick="openModal();currentSlide(6)" class="hover-shadow" src="img/half_body_example_3.png"></a>
+      </div>
+      <p><b> full body without background: $35 USD </b></p>
+      <div class="thumbs">
+        <img onclick="openModal();currentSlide(7)" class="hover-shadow" src="img/full_body_example_1.png"></a>
+        <img onclick="openModal();currentSlide(8)" class="hover-shadow" src="img/full_body_example_2.jpg"></a>
+        <img onclick="openModal();currentSlide(9)" class="hover-shadow" src="img/full_body_example_3.png"></a>
+      </div>
+      <p><b> Ilustration with background:  $55 USD </b></p>
+      <div class="thumbs" >
+        <img onclick="openModal();currentSlide(10)" class="hover-shadow" src="img/full_ilustration_example_1.jpg"></a>
+        <img onclick="openModal();currentSlide(11)" class="hover-shadow" src="img/full_ilustration_example_2.jpg"></a>
+        <img onclick="openModal();currentSlide(12)" class="hover-shadow" src="img/full_ilustration_example_3.jpg"></a>
+      </div>
+    
+    
+    
+    
+<!--     
+    
+    
+        <h2> Bust without background : $10 USD </h2>
+        <img src="img/bust_example_1.png"><img src="img/bust_example_2.jpg"><img src="img/bust_example_3.jpg">
+        <h2>  half body without background: $20 USD </h2>
+     <img src="img/half-body_example_1.png"> <img src="img/half-body_example_2.png"><img src="img/half-body_example_3.png">
+        <h2> full body without background: $30 USD</h2>
+        <img src="img/full-body_example_1.png"> <img src="img/full-body_example_2.png">
+        <h2> Ilustration with background:  $50 USD</h2>
+        <img src="img/ilustration_example_1.png"><img src="img/ilustration_example_2.png">
+    
+        Payment method:
+        - Please, don't send the payment until I approve your idea.
+        <li></li> -->
+        <!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+<style>
+  .mySlides img{  height: 98%;width: auto;}
+  @media (orientation: portrait) {
+    .mySlides img{  width: 98%; height: auto;}
+}
+</style>
+    <div class="mySlides"><img src="img/bust_example_1.png" ></div>
+    <div class="mySlides"><img src="img/bust_example_2.jpg" ></div>
+    <div class="mySlides"><img src="img/bust_example_3.jpg" ></div>
+    <div class="mySlides"><img src="img/half_body_example_1.png" ></div>
+    <div class="mySlides"><img src="img/half_body_example_2.png" ></div>
+    <div class="mySlides"><img src="img/half_body_example_3.png" ></div>
+    <div class="mySlides"><img src="img/full_body_example_1.png" ></div>
+    <div class="mySlides"><img src="img/full_body_example_2.jpg" ></div>
+    <div class="mySlides"><img src="img/full_body_example_3.png" ></div>
+    <div class="mySlides"><img src="img/full_ilustration_example_1.jpg" ></div>
+    <div class="mySlides"><img src="img/full_ilustration_example_2.jpg" ></div>
+    <div class="mySlides"><img src="img/full_ilustration_example_3.jpg" ></div>
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+</div>
+
+
+
+
+
+
+    </main>
+    <footer>
+      <div style="margin-bottom: 40px;" class="multilinks">
+        <a href="https://ko-fi.com/julif?fbclid=IwAR0gsI_8fK69GiAkQN5ZuF9_I0KUtzE8O6pDQu3efmkIXndPeFl4FYv_kK8"> ko-fi </a>
+<a href="https://twitter.com/julian_julif"> Twitter </a>
+<a href="http://juli22f.blogspot.com.ar/"> Blogspot </a>
+     <a href="https://www.deviantart.com/julif-art"> Deviantart </a>
+       <a href="https://www.youtube.com/channel/UCwtSWyoOXwwfbeekdgmJKew"> Youtube </a>
+        <a href="https://julif-art.tumblr.com/"> Tumblr </a>
+        <a href="https://www.instagram.com/_julif_/"> Instagram </a>
+        <a href="https://www.artstation.com/julif"> Artsation </a>
+        <a href="https://www.designbyhumans.com/shop/julif/"> Designbyhumans </a>
+      </div>
+      <div id="social_links_container_footer" class="box">
+        <a href="https://twitter.com/julian_julif" id="twitter_btn"> <!-- twitter --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24 " viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg> </a> 
+        <a href="https://www.facebook.com/JulifIsBetterThanYourMom/" id="facebook_btn"> <!-- facebook --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24 " viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg> </a> 
+        <a href="https://github.com/julif" id="github_btn"> <!-- github --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24 " viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg> </a> 
+        <a href="https://www.instagram.com/_julif_/" id="instagram_btn"> <!-- instagram --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24 " viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg> </a>
+      </div>
+    <linea></linea>
+    <div> © Julif </div>
+    </footer>
+  </body>
+
+
+
+    <script>
+// Open the Modal
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+  document.getElementById("body").classList.add("modal-open");
+}
+
+// Close the Modal
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+  document.getElementById("body").classList.remove("modal-open");
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "flex";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+</html>
