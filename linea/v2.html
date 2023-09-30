@@ -1,0 +1,299 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <style>
+      body {
+        font-family: rubik,helvetica,arial,sans-serif;
+    background-color: #32587d;
+    height: 100%;
+    width: 100%;
+    font-weight: 600;
+    margin: 0px auto;
+     display: flex; 
+    justify-content: center;
+
+      }
+      linea{
+        /* display: flex; */
+        padding: 0px 50px;
+  
+
+        display: inline-flex;
+        /* background-color: #ff000052;  */
+        /* width: 100%; */
+    box-sizing: border-box;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100%;
+
+    /* overflow-x: scroll; */
+    overflow: auto;
+      }
+      evento {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      evento div{
+        background-color: #ffffff;
+        padding: 3px;
+        margin: 6px;
+        max-width: 150px;
+        border: 3px solid #1c3247;
+        text-align: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 13px;
+      }
+    
+      evento::before, evento::after {
+        content: " ";
+        background-color: #1c3247;
+        height: 6px;
+        color: transparent;
+        width: 21px;
+      }
+
+      .first::before ,.last::after{ width: 0px; }
+    
+      gap{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      gap div{
+        height: 6px;
+    width: 150px;
+    background-color: #1c3247;
+    position: relative;
+      }
+      gap span{
+        position: absolute;
+        bottom: 10px;
+        color:#1c3247 ;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+      }
+      #contenedor > evento:first-child:before, evento:last-child:after { width: 0px; }
+
+     ::-webkit-scrollbar {
+
+height: 10px;
+/* background-color: #e2e8f1; */
+background-color: #0f0f15;
+background-color: #000000;
+background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+/* background-color: rgba(0, 0, 0, 0.2); */
+
+background-color:  #008ee1;
+border-radius: 3px;
+height: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+line {
+    height: 100%;
+    height: auto;
+    /* width: 20px; */
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    position: relative;
+}
+rama{
+  display: grid;
+  position: relative;
+  /* gap: 5px; */
+}
+sub_linea{
+
+    display: flex;
+}
+
+
+
+
+.democlass{
+  position: absolute;
+    background-color: red;
+    background-color: #1c3247;
+    width: 7px;
+}
+
+
+ evento:has(+ rama)::after { width: 50px;} 
+
+
+ sub_linea evento:first-child::before { width: 40px;} 
+
+ /* sub_linea:first-child::before{ width: 50px;}  */
+    </style>
+  </head>
+  <body>
+    <linea id="contenedor">
+      <evento ><div> La infancia de Enixia </div></evento> 
+      <evento ><div> La princesa desterrada </div></evento> 
+      <evento ><div> Nix y el dios dragon inmortal </div></evento> 
+      <evento ><div> La corrupcion de Enixia </div></evento> 
+      <gap> <div> <span>miles de años</span></div> </gap>
+      <evento ><div> La falsa diosa de la muerte </div></evento> 
+      <evento ><div> rebelion y destierro de la falsa diosa de la muerte </div></evento> 
+      <gap> <div> <span>miles de años</span></div> </gap>
+
+      <evento ><div> Aparece el rey conejo </div></evento> 
+      <evento ><div> Nael persigue la leyenda de la hecizera inmortal </div></evento> 
+      <evento ><div> Nix le ofrece a Nael ser parte de su corte </div></evento> 
+      <!-- <div id="consola2" style="top: 31px; bottom: 40px;"></div> -->
+
+
+
+    
+      <!-- <gap> <div style="width: 60px"> <span> Nix le ofrece a Nael ser parte de su corte </span></div> </gap> -->
+      <rama id="1" >
+        <!-- <div></div> -->
+        <sub_linea>
+       
+          
+              <evento ><div> Arnael el aprendiz </div></evento> 
+              <evento><div> Nix conoce a Shacta </div></evento>
+            <evento ><div> La bruja vs el principe </div></evento> 
+          <evento ><div> La caceria de el rey conejo </div></evento> 
+          <gap> <div style="width: 60px"> <span>100 años</span></div> </gap>
+          <evento><div> Nix la hechizera </div></evento> 
+          
+          <evento><div> Nero y Bunny </div></evento>
+          <gap> <div style="width: 60px"> <span>300 años</span></div> </gap>
+          <evento ><div> Muerte de Nix </div></evento> 
+          <evento ><div> El general de las sombras </div></evento> 
+          <evento ><div> Lucero </div></evento>  
+        </sub_linea>
+        <sub_linea>
+        <evento ><div> Nael destrulle la mascara de el ave </div></evento>  
+        <evento><div> Nix conoce a Shacta </div></evento>
+        <evento ><div> Nix se convierte en diosa </div></evento>  
+
+ <!--      <rama id="2" >
+        <sub_linea><evento ><div> 1 </div></evento>  </sub_linea>
+        <sub_linea><evento ><div> 2</div></evento>  </sub_linea>
+        <sub_linea><evento ><div> 3</div></evento>  </sub_linea>
+        <sub_linea><evento ><div> 4</div></evento>  </sub_linea>
+      </rama> -->
+        </sub_linea>
+    
+     
+    </rama>
+    <!-- <rama id="rama_1" class="rama"></rama> -->
+
+    </linea>
+  
+  </body>
+  <script>
+  </script>
+    <script>
+    
+    const slider = document.querySelector('#contenedor');
+    let mouseDown = false;
+    let startX, scrollLeft;
+    
+    let startDragging = function (e) {
+      mouseDown = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    };
+    let stopDragging = function (event) {
+      mouseDown = false;
+    };
+    
+    slider.addEventListener('mousemove', (e) => {
+      e.preventDefault();
+      if(!mouseDown) { return; }
+      const x = e.pageX - slider.offsetLeft;
+      const scroll = x - startX;
+      slider.scrollLeft = scrollLeft - scroll;
+    });
+    
+    // Add the event listeners
+    slider.addEventListener('mousedown', startDragging, false);
+    slider.addEventListener('mouseup', stopDragging, false);
+    slider.addEventListener('mouseleave', stopDragging, false);
+    
+
+
+ 
+
+  
+
+/* var a = document.getElementById("hola_1").children[1].offsetHeight;
+var b = document.getElementById("hola_1").lastElementChild.offsetHeight;
+console.log(   a/2 );
+console.log(   b/2 ); 
+
+document.getElementById("hola").style.top=  a/2 ;
+document.getElementById("hola").style.bottom= b/2 ;
+ */
+    </script>
+      <script>
+// const collection = document.getElementsByClassName("rama");
+
+let collection = document.getElementsByTagName("rama");
+Array.from(collection).forEach(function (element) { 
+  
+  console.log(element.id);
+   var rama = document.getElementById( element.id);
+   console.log(rama);
+ 
+   const newNode = document.createElement("div");
+   rama.insertBefore(newNode, rama.children[0]);
+
+   rama.firstElementChild.setAttribute("id",  rama.id +"_before");
+   rama.firstElementChild.setAttribute("class", "democlass");
+
+   var a = document.getElementById( rama.id ).children[1].offsetHeight;
+   var b = document.getElementById( rama.id ).lastElementChild.offsetHeight;
+
+  document.getElementById( rama.id +"_before").style.top=  a/2 ;
+  document.getElementById( rama.id +"_before").style.bottom= b/2 ;
+
+
+
+});
+
+/* 
+        var rama = document.getElementById("rama");
+
+     
+        const newNode = document.createElement("div");
+        rama.insertBefore(newNode, rama.children[0]);
+
+        rama.firstElementChild.setAttribute("id", "rama_1");
+        rama.firstElementChild.setAttribute("class", "democlass");
+
+        var a = document.getElementById("rama").children[1].offsetHeight;
+        var b = document.getElementById("rama").lastElementChild.offsetHeight;
+
+        document.getElementById("rama_1").style.top=  a/2 ;
+        document.getElementById("rama_1").style.bottom= b/2 ; */
+
+    </script>
+</html>
+
