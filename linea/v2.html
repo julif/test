@@ -13,7 +13,7 @@
     font-weight: 600;
     margin: 0px auto;
      display: flex; 
-    justify-content: center;
+    /* justify-content: center; */
 
       }
       linea{
@@ -21,22 +21,26 @@
         padding: 0px 50px;
   
 
-        display: inline-flex;
+        display: inline-flex; 
+   
+   
         /* background-color: #ff000052;  */
         /* width: 100%; */
     box-sizing: border-box;
-    /* justify-content: center; */
-    align-items: center;
+     justify-content: center ; 
+       align-items: center;   
     height: 100%;
 
     /* overflow-x: scroll; */
-    overflow: auto;
+    overflow: initial;
+    
       }
       evento {
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        min-height: 0;
       }
       evento div{
         background-color: #ffffff;
@@ -48,6 +52,9 @@
         margin-left: 0px;
         margin-right: 0px;
         padding: 13px;
+        /* height: 127px; */
+        width: 150px;
+     
       }
     
       evento::before, evento::after {
@@ -80,7 +87,7 @@
         width: 100%;
         text-align: center;
       }
-      #contenedor > evento:first-child:before, evento:last-child:after { width: 0px; }
+      #linea > evento:first-child:before, evento:last-child:after { width: 0px; }
 
      ::-webkit-scrollbar {
 
@@ -124,6 +131,7 @@ rama{
   display: grid;
   position: relative;
   /* gap: 5px; */
+  /* display: inline-table; */
 }
 sub_linea{
 
@@ -138,31 +146,35 @@ sub_linea{
     background-color: red;
     background-color: #1c3247;
     width: 7px;
+/*     
+    height: 71%; */
 }
 
 
- evento:has(+ rama)::after { width: 50px;} 
+@media (orientation: landscape) and (max-height: 668px){
+linea{
+  display: -webkit-inline-box; 
+}
+  rama{display: inline-table; }
+}
 
 
- sub_linea evento:first-child::before { width: 40px;} 
+/*  evento:has(+ rama)::after { width: 50px;} 
+
+
+ sub_linea evento:first-child::before { width: 40px;}  */
 
  /* sub_linea:first-child::before{ width: 50px;}  */
     </style>
   </head>
-  <body>
-    <linea id="contenedor">
+  <body onresize="myFunction()"  id="contenedor">
+    <linea id="linea">
       <evento ><div> La infancia de Enixia </div></evento> 
-      <evento ><div> La princesa desterrada </div></evento> 
-      <evento ><div> Nix y el dios dragon inmortal </div></evento> 
-      <evento ><div> La corrupcion de Enixia </div></evento> 
-      <gap> <div> <span>miles de años</span></div> </gap>
+      <gap> <div style="width: 60px"> <span>miles de años</span></div> </gap>
       <evento ><div> La falsa diosa de la muerte </div></evento> 
-      <evento ><div> rebelion y destierro de la falsa diosa de la muerte </div></evento> 
-      <gap> <div> <span>miles de años</span></div> </gap>
+      <gap> <div style="width: 60px"> <span>miles de años</span></div> </gap>
 
-      <evento ><div> Aparece el rey conejo </div></evento> 
-      <evento ><div> Nael persigue la leyenda de la hecizera inmortal </div></evento> 
-      <evento ><div> Nix le ofrece a Nael ser parte de su corte </div></evento> 
+      <evento ><div> Enicia la hechizera inmortal </div></evento> 
       <!-- <div id="consola2" style="top: 31px; bottom: 40px;"></div> -->
 
 
@@ -174,30 +186,37 @@ sub_linea{
         <sub_linea>
        
           
-              <evento ><div> Arnael el aprendiz </div></evento> 
-              <evento><div> Nix conoce a Shacta </div></evento>
-            <evento ><div> La bruja vs el principe </div></evento> 
-          <evento ><div> La caceria de el rey conejo </div></evento> 
-          <gap> <div style="width: 60px"> <span>100 años</span></div> </gap>
-          <evento><div> Nix la hechizera </div></evento> 
-          
-          <evento><div> Nero y Bunny </div></evento>
-          <gap> <div style="width: 60px"> <span>300 años</span></div> </gap>
-          <evento ><div> Muerte de Nix </div></evento> 
-          <evento ><div> El general de las sombras </div></evento> 
-          <evento ><div> Lucero </div></evento>  
+              <evento ><div> Arnael acepta el pacto </div></evento> 
+              <gap> <div style="width: 60px"> <span>500 años</span></div> </gap>
+              <evento ><div>  Milrra ataca el planeta viento </div></evento>
+              <evento ><div> Shacta y Raksha capturan a Milrra </div></evento>
+              <evento ><div>    El dragon emperador ataca el planeta hielo </div></evento>
+              <rama id="3" >  
+                <sub_linea><evento ><div> Jack vence al dragon emperador </div></evento>  </sub_linea> 
+                <sub_linea><evento ><div> El dragon emperador posee a Shacta </div></evento>  </sub_linea> 
+              </rama>
+             
         </sub_linea>
         <sub_linea>
-        <evento ><div> Nael destrulle la mascara de el ave </div></evento>  
-        <evento><div> Nix conoce a Shacta </div></evento>
-        <evento ><div> Nix se convierte en diosa </div></evento>  
-
- <!--      <rama id="2" >
-        <sub_linea><evento ><div> 1 </div></evento>  </sub_linea>
-        <sub_linea><evento ><div> 2</div></evento>  </sub_linea>
-        <sub_linea><evento ><div> 3</div></evento>  </sub_linea>
-        <sub_linea><evento ><div> 4</div></evento>  </sub_linea>
-      </rama> -->
+        <evento ><div> Arnael rechaza el pacto </div></evento>  
+        <gap> <div style="width: 60px"> <span>500 años</span></div> </gap>
+        <evento ><div> Milrra ataca el planeta viento </div></evento>
+        <rama id="2" >
+          <sub_linea><evento >
+            <div> Nix vence a Milrra </div></evento>
+            <evento ><div>    El dragon emperador ataca el planeta hielo </div></evento>
+            <rama id="4" >  
+              <sub_linea><evento ><div>  Nix mata al dragon emperador </div></evento>  </sub_linea> 
+              <sub_linea><evento ><div> El dragon emperador posee a Shacta y queda atrapado con ella </div></evento>  </sub_linea> 
+              <sub_linea><evento ><div> El dragon emperador entra a la mascara y shacta recupera el control </div></evento>  </sub_linea> 
+            </rama>
+          </sub_linea>
+          <sub_linea>
+            <evento ><div>  Milrra vence a Nix </div></evento>
+          
+          </sub_linea>
+   
+        </rama>
         </sub_linea>
     
      
@@ -277,6 +296,29 @@ Array.from(collection).forEach(function (element) {
 
 
 });
+
+
+function myFunction(){
+
+  let collection = document.getElementsByTagName("rama");
+Array.from(collection).forEach(function (element) { 
+  
+
+   var rama = document.getElementById( element.id);
+
+   rama.firstElementChild.setAttribute("id",  rama.id +"_before");
+   rama.firstElementChild.setAttribute("class", "democlass");
+
+   var a = document.getElementById( rama.id ).children[1].offsetHeight;
+   var b = document.getElementById( rama.id ).lastElementChild.offsetHeight;
+
+  document.getElementById( rama.id +"_before").style.top=  a/2 ;
+  document.getElementById( rama.id +"_before").style.bottom= b/2 ;
+
+
+
+});
+}
 
 /* 
         var rama = document.getElementById("rama");
