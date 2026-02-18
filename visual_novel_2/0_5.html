@@ -1,0 +1,560 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  body{
+    margin: 0px auto;
+    font-family: "proxima-nova",sans-serif;
+    background-color: #191525;
+  }
+    #contenedor {
+    height: 100%;
+    width: 100%;
+    background-color: #191525;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+  .contenedor{
+    height: 200px;
+    display: inline-flex;
+    min-width: 100%;
+    justify-content: center;
+    background-color: #3b4048;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+    aspect_ratio_container {
+    background-image: url("full_background4.png"); 
+     background-size: cover;
+    margin: auto;
+
+    aspect-ratio: 25.8/9;
+    height: 56.25vw;
+    max-height: 100%;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        position: relative;
+}
+
+  aspect_ratio {
+    /* background-color: #b35151; */
+/*      background-image: url("fondo.png"); 
+    background-image: url("1080.png");  */
+    background-size: contain;
+    width: 100%;
+    width: 100vw;
+    height: 56.25vw;
+    max-height: 100vh;
+    max-width: 177.78vh;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+img{
+    height: 100%;
+    height: 133%;
+    /* background-color: #b10a0a7a; */
+    /* margin-top: -23%; */
+    position: absolute;
+    bottom: 0;
+
+}
+#personajes {
+      /* background-color: #ffffffb8; */
+    display: flex;
+    justify-content: center;
+    height: 90%;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.personaje{
+    /* background-color: #0000ff1f; */
+    /* margin: 25px; */
+    /* margin: 2%; */
+  /*   animation: slidein 0.5s forwards; */
+    width: 25%;
+    height: 100%;
+    /* width: auto; */
+    display: flex;
+    justify-content: center;
+    position: relative;
+/* animation: slidein 0.5s forwards; */
+}
+
+
+#texto_container {
+    /* background-color: black; */
+    height: 25%; 
+    min-height: 20%;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    bottom: 0;
+    padding-bottom: 1.5%;
+}
+#texto {
+    height: 100%;
+    background-color: white;
+    background-color: #0a0a0c;
+    /* margin-bottom: 10%; */
+    margin-left: 2%;
+    margin-right: 2%;
+    /* margin-bottom: 10%; */
+    border-radius: 0px;
+    color: white;
+    /* border: solid 4px #ffffff; */
+        padding: 2.1%;
+    box-sizing: border-box;
+/* clip-path: polygon(0% 3%,0 33%,1.5% 45%,2% 99%,53% 97%,100% 100%,99.5% 70%,98% 44%,99% 1%,65% 3%,36% 1%); */
+/* clip-path: polygon(0% 3%, 0 33%, 1.5% 45%, 2% 99%, 53% 97%, 100% 100%, 99.5% 70%, 98% 44%, 99% 1%, 65% 3%, 36% 1%); */
+  padding-top: 0.5%;
+}
+#texto p{
+      margin: 0;
+       font-size: 2.5cqw; 
+   
+}
+
+
+
+
+@keyframes breathing {
+  50% {
+    -webkit-transform:  scaleY( 1);
+    -ms-transform:  scaleY(1);
+    transform:  scaleY( 1);
+  }
+  50% {
+    -webkit-transform:  scaleY(1.02);
+    -ms-transform:  scaleY( 1.02);
+    transform:  scaleY( 1.02);
+  }
+  100% {
+    -webkit-transform:  scaleY( 1);
+    -ms-transform:  scaleY(1);
+    transform:  scaleY( 1);
+  }}
+
+
+
+
+
+
+.personaje img{animation-delay: 0.30s;}
+@keyframes slidein {
+from {
+width: 0px;
+transform: scale(0);
+opacity: 0;
+}
+to {/* width: 150px; This will change for each element *//* width: fit-content; *//* width: 100%; */width: 25%;            /*This will change for each element */transform: scale(1);opacity: 1;}
+}
+
+
+
+
+.personaje img {
+    animation-delay: 0.30s;
+}
+
+.breathing{
+   animation: breathing 1.5s ease-out infinite normal;
+    transform-origin: bottom;
+}
+
+
+.personaje img{
+    transition: 
+        filter 0.4s ease,
+        transform 0.4s ease,
+        margin-bottom 0.4s ease,
+        opacity 0.4s ease;
+}
+
+.activo{
+    filter: brightness(1) grayscale(0);
+    transform: scale(1);
+    margin-bottom: 0%;
+    opacity: 1;
+}
+
+.inactivo{
+    filter: brightness(0.5) grayscale(0.4);
+    /* transform: scale(0.95); */
+    margin-bottom: -4%;
+    /* opacity: 0.8; */
+}
+
+
+#nombre{
+    font-weight: bold;
+    color: #36d8ff;
+    border-bottom: solid #202029 2px;
+    padding: 8px 12px 0px 12px;
+    /* font-size: 18px; */
+    font-size: 1.5cqw;
+    
+      
+}
+
+#texto p{
+    padding: 8px 12px 12px 12px;
+    font-size: 1.5cqw;
+    margin-top: 1%;
+}
+
+#continuar{
+    position: absolute;
+    right: 4%;
+    bottom: 11%;
+    opacity: 0;
+    font-size: 18px;
+     font-size: 2cqw; 
+     font-size: clamp(1rem, 1.4vw, 2.5rem);
+
+    animation: blink 1s infinite;
+    pointer-events: none;
+}
+
+#continuar.visible{
+    opacity: 1;
+}
+
+@keyframes blink{
+    0%,100%{opacity:0}
+    50%{opacity:1}
+}
+
+
+
+
+
+/* Cuando el ancho de pantalla sea 768px o menor (tablets/móviles) */
+@media (max-width: 1000px) {
+
+    #texto_container {
+
+    height: auto;
+}
+ #nombre{font-size: 2.5cqw;}
+
+#texto p{ font-size: 2.5cqw;}
+}
+
+
+
+#controles_top {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 100;
+    display: flex;
+    gap: 10px;
+   
+}
+#version {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 100;
+    color: white;
+     opacity: 0.5;
+
+}
+
+.btn-control {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: 1px solid white;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.btn-control:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-activo {
+    background: #36d8ff;
+    color: black;
+}
+
+#area_visible{
+    display: block;
+    position: absolute;
+    height: 100%;
+    /* width: 100%; */
+    /* background-color: rgba(255, 0, 0, 0.281); */
+        width: 100vw;
+         background-image: url("borde_fondo.png"); 
+         z-index: 2;
+             background-position: center;
+    background-size: cover;
+}
+
+
+
+
+#controles_top {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 100;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-control {
+    background: rgba(25, 21, 37, 0.7); /* Fondo oscuro semitransparente */
+    color: #ffffff; /* El azul cian de tus nombres */
+    border: 2px solid #ffffff;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 0.9rem;
+    font-size: 1cqw;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(54, 216, 255, 0.2);
+}
+
+.btn-control:hover {
+    background: #36d8ff;
+    color: #191525;
+    box-shadow: 0 0 20px rgba(54, 216, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-control:active {
+    transform: translateY(0px);
+}
+
+.btn-activo {
+    background: #36d8ff;
+    color: #191525;
+    animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+    0% { box-shadow: 0 0 0 0 rgba(54, 216, 255, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(54, 216, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(54, 216, 255, 0); }
+}
+
+</style>
+</head>
+
+<body>
+    <div id="contenedor">
+        <aspect_ratio_container>
+           
+            <div id="area_visible">
+                <div id="controles_top">
+                    <button id="btnAuto" class="btn-control" onclick="toggleAuto()">AUTO: OFF</button>
+                    <button id="btnFS" class="btn-control" onclick="toggleFullScreen()">PANTALLA COMPLETA</button>
+                </div>
+                <div id="version"> V 0.5.1</div>
+            </div>
+            <aspect_ratio>
+                <div id="texto_container">
+                    <div id="texto">
+                        <div id="nombre"></div>
+                        <p></p>
+                        <div id="continuar">▼</div>
+                    </div>
+                </div>
+                <div id="personajes">   
+                    <div class="personaje" ><img class="breathing activo" src="Juli_idle.png"></div>
+                    <div class="personaje"><img class="breathing inactivo" src="Nix_idle.png"></div></div>
+                </div>
+            </aspect_ratio>
+        </aspect_ratio_container>
+    </div>
+   
+<script>
+    const personajesData = [
+    { 
+        nombre: "Juli", 
+        idle: "Juli_idle.png", 
+        speaking: "Juli_speaking.png" 
+    },
+    { 
+        nombre: "Nix", 
+        idle: "Nix_idle.png", 
+        speaking: "Nix_speaking.png" 
+    }
+];
+
+const dialogos = [
+    { personaje: 0, texto: "hola mundo" },
+    { personaje: 1, texto: "este es el texto 2, ahora es un poco más largo para probar el sistema." },
+    { personaje: 0, texto: "este es el texto 3, este también es largo para asegurarnos de que el skip funciona correctamente sin cortar nada." },
+    { personaje: 1, texto: "este es el texto 4, ahora es un poco más largo para probar el sistema." },
+];
+
+let indice = 0;
+let escribiendo = false;
+let autoPlay = false;
+let autoDelay = 2000;
+let escrituraID = 0;
+let textoCompletoActual = "";
+
+const textoBox = document.getElementById("texto");
+const textoP = textoBox.querySelector("p");
+const nombreBox = document.getElementById("nombre");
+const continuar = document.getElementById("continuar");
+const personajes = document.querySelectorAll(".personaje img");
+const btnAuto = document.getElementById("btnAuto");
+
+// --- LÓGICA DE PERSONAJES ---
+function actualizarPersonajes(activoIndex) {
+    personajes.forEach((p, i) => {
+        if (i === activoIndex) {
+            p.classList.add("activo");
+            p.classList.remove("inactivo");
+        } else {
+            p.classList.add("inactivo");
+            p.classList.remove("activo");
+            p.src = personajesData[i].idle;
+        }
+    });
+}
+
+// --- LÓGICA DE TYPEWRITER ---
+function typewriter(texto, velocidad = 25) {
+    escrituraID++;
+    const idActual = escrituraID;
+
+    escribiendo = true;
+    
+    // El indicador de continuar desaparece totalmente
+    continuar.style.visibility = "hidden";
+    continuar.classList.remove("visible");
+
+    textoCompletoActual = texto;
+    textoP.textContent = "";
+
+    // Cambiar sprite a hablando
+    const pIndex = dialogos[indice].personaje;
+    personajes[pIndex].src = personajesData[pIndex].speaking;
+
+    let i = 0;
+    function escribir() {
+        if (idActual !== escrituraID) return;
+
+        if (i < texto.length) {
+            textoP.textContent += texto[i];
+            i++;
+            setTimeout(escribir, velocidad);
+        } else {
+            finalizarTexto();
+            if (autoPlay) {
+                setTimeout(siguienteDialogo, autoDelay);
+            }
+        }
+    }
+    escribir();
+}
+
+function finalizarTexto() {
+    escribiendo = false;
+    const pIndex = dialogos[indice].personaje;
+    
+    // El personaje vuelve a estar quieto
+    personajes[pIndex].src = personajesData[pIndex].idle;
+    
+    // Aparece el indicador de "Siguiente"
+    continuar.style.visibility = "visible";
+    continuar.classList.add("visible");
+}
+
+function mostrarDialogo() {
+    const dialogo = dialogos[indice];
+    nombreBox.textContent = personajesData[dialogo.personaje].nombre;
+    actualizarPersonajes(dialogo.personaje);
+    typewriter(dialogo.texto);
+}
+
+function siguienteDialogo() {
+    if (escribiendo) {
+        escrituraID++;
+        textoP.textContent = textoCompletoActual;
+        finalizarTexto();
+        return;
+    }
+
+    indice++;
+    if (indice >= dialogos.length) {
+        console.log("Escena terminada");
+        return;
+    }
+    mostrarDialogo();
+}
+
+// --- CONTROLES ---
+function toggleAuto() {
+    autoPlay = !autoPlay;
+    btnAuto.classList.toggle("btn-activo");
+    btnAuto.textContent = autoPlay ? "Auto: ON" : "Auto Mode";
+    
+    if (autoPlay && !escribiendo) {
+        setTimeout(siguienteDialogo, autoDelay);
+    }
+}
+
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.error(`Error: ${err.message}`);
+        });
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }
+}
+
+// --- EVENTOS ---
+textoBox.addEventListener("click", (e) => {
+    e.stopPropagation(); // Evita conflictos si hay otros clicks
+    siguienteDialogo();
+});
+
+document.addEventListener("keydown", (e) => {
+    const key = e.key.toLowerCase();
+    if (key === "a") toggleAuto();
+    if (key === "f") toggleFullScreen();
+    if (key === " " || key === "enter") siguienteDialogo();
+});
+
+// INICIO
+mostrarDialogo();
+</script>
+</body>
+
+</html>
