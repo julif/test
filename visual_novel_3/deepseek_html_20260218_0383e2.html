@@ -68,7 +68,7 @@
     /* align-items: center; */
 }
 img{
-    height: 102%;
+    height: 100%;
    
     /*  height: 133%;  background-color: #b10a0a7a; */
     /* margin-top: -23%; */
@@ -144,13 +144,8 @@ img{
     box-sizing: border-box;
 /* clip-path: polygon(0% 3%,0 33%,1.5% 45%,2% 99%,53% 97%,100% 100%,99.5% 70%,98% 44%,99% 1%,65% 3%,36% 1%); */
 /* clip-path: polygon(0% 3%, 0 33%, 1.5% 45%, 2% 99%, 53% 97%, 100% 100%, 99.5% 70%, 98% 44%, 99% 1%, 65% 3%, 36% 1%); */
-
-border-radius: 6px;
-border-radius: 2vh;
   padding-top: 0.5%;
 }
-
-
 #texto p{
       margin: 0;
        font-size: 2.5cqw; 
@@ -176,6 +171,7 @@ border-radius: 2vh;
     -ms-transform:  scaleY(1);
     transform:  scaleY( 1);
   }}
+
 
 
 
@@ -230,7 +226,6 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
 
 #nombre{
     font-weight: bold;
-    color: #36d8ff;
     border-bottom: solid #202029 2px;
     padding: 8px 12px 0px 12px;
     /* font-size: 18px; */
@@ -238,6 +233,7 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
     
        font-size: clamp(9px,1.5cqw, 2.5rem);
 }
+
 /* Colores específicos para cada personaje */
 .color-juli {
     color: #36d8ff !important; /* Azul cian */
@@ -256,27 +252,26 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
     /* font-family: cursive; */
     /* font-family: monospace; */
     line-height: 167%;
-    
+    padding: 0px !important;
 
 
     
          font-size: clamp(9px,1.5cqw, 2.5rem);
-         padding: 0px 10px !important;
 }
 
 #continuar{
     position: absolute;
-    right: 12px;
-    bottom: 8px;
-    /* right: 4.6%; */
-    /* bottom: 15.4%; */
+    right: 4%;
+    bottom: 11%;    right: 4.6%;
+    bottom: 15.4%;
+
     opacity: 0;
     font-size: 18px;
-    font-size: 2cqw;
-     font-size: clamp(8px,1.5cqw,15px);
-   animation: blink 1s infinite; 
+     font-size: 2cqw; 
+     font-size: clamp(1rem, 1.4vw, 2.5rem);
+
+    animation: blink 1s infinite;
     pointer-events: none;
-   
 }
 
 #continuar.visible{
@@ -287,7 +282,6 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
     0%,100%{opacity:0}
     50%{opacity:1}
 }
-
 
 
 
@@ -358,7 +352,7 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
 
 #area_visible{
     display: block;
-    /* position: absolute; */
+    position: absolute;
     height: 100%;
     /* width: 100%; */
     /* background-color: rgba(255, 0, 0, 0.281); */
@@ -428,11 +422,8 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
 
 
 @media (max-width: 400px) {
- #texto{ margin-left: 2%; margin-right: 2%;border-radius: 6px;}
-
-
+ #texto{ margin-left: 2%; margin-right: 2%;}
 }
-
 
 </style>
 </head>
@@ -458,7 +449,7 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
                 </div>
                 <div id="personajes">   
                     <div class="personaje" ><img class="breathing activo" src="Juli_idle.png"></div>
-                    <div class="personaje"><img class="breathing inactivo" src="Anier_idle.png"></div></div>
+                    <div class="personaje"><img class="breathing inactivo" src="Nix_idle.png"></div></div>
                 </div>
             </aspect_ratio>
         </aspect_ratio_container>
@@ -467,38 +458,34 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
 <script>
     const personajesData = [
     { 
-        nombre: "Aniabet", 
+        nombre: "Juli", 
         idle: "rara_idle.png", 
         speaking: "rara_idle.png" 
     },
     { 
-        nombre: "Anier", 
-        idle: "Anier_idle.png", 
-        speaking: "Anier_idle.png", 
-        //  speaking: "Anier_speaking.png"
+        nombre: "Nix", 
+        idle: "Nix_idle.png", 
+        speaking: "Nix_speaking.png" 
     }
-
 ];
-    // Colores para cada personaje (índice 0 = Juli, 1 = Nix)
+
+// Colores para cada personaje (índice 0 = Juli, 1 = Nix)
 const coloresPersonajes = [
     'color-juli',  // Azul
     'color-nix'    // Rosa
 ];
+
 const dialogos = [
-    { personaje: 1 , texto: "mmmm..." },
-    { personaje: 1 , texto: "mmmmmmmmm........." },
-    { personaje: 1 , texto: "mmmmmmmmmmmmmmmmmm................." },
-    { personaje: 0, texto: "Su conejísima majestad… han pasado exactamente cuarenta minutos." },
-    { personaje: 0, texto: "¿Puede, responder la pregunta?" },
-    { personaje: 1, texto: "Espera un minuto, no fue una pregunta Simple." },
-    { personaje: 0, texto: "Literalmente le pregunte si se iba a comportar" },
-    { personaje: 1, texto: "Fue una p r e g u n t a c o n t r a m p a." },
+    { personaje: 0, texto: "hola mundo" },
+    { personaje: 1, texto: "este es el texto 2, ahora es un poco más largo para probar el sistema." },
+    { personaje: 0, texto: "este es el texto 3, este también es largo para asegurarnos de que el skip funciona correctamente sin cortar nada." },
+    { personaje: 1, texto: "este es el texto 4, ahora es un poco más largo para probar el sistema." },
 ];
 
 let indice = 0;
 let escribiendo = false;
 let autoPlay = false;
-let autoDelay = 3000;
+let autoDelay = 2000;
 let escrituraID = 0;
 let textoCompletoActual = "";
 
@@ -606,7 +593,7 @@ function siguienteDialogo() {
 function toggleAuto() {
     autoPlay = !autoPlay;
     btnAuto.classList.toggle("btn-activo");
-    btnAuto.textContent = autoPlay ? "Auto: ON" : "Auto OFF";
+    btnAuto.textContent = autoPlay ? "Auto: ON" : "Auto Mode";
     
     if (autoPlay && !escribiendo) {
         setTimeout(siguienteDialogo, autoDelay);
@@ -724,6 +711,24 @@ textoBox.addEventListener("click", (e) => {
 mostrarDialogo();
 </script>
 <script>
+/* myFunction_set();
+
+
+    $(document).ready(function(){
+  $(window).resize(function(){
+    myFunction_set();
+  });
+});
+
+       function myFunction_set(){
+        var width  = document.querySelector('aspect_ratio').clientHeight;
+
+        document.getElementById('nombre').style.fontSize = width/29 +"px"; 
+        document.querySelector('#texto p').style.fontSize = width/30 +"px"; 
+    }
+ window.addEventListener("resize", myFunction_set); */
+
+
 
 
 </script>
