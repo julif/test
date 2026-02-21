@@ -6,69 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>v 0.6</title>
 <style>
-  body{
-    margin: 0px auto;
-    font-family: "proxima-nova",sans-serif;
-    background-color: #191525;
-  }
-#contenedor {
-    height: 100%;
-    width: 100%;
-    background-color: #191525;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-        background-color: #12101a;
-}
- aspect_ratio_container {
-    background-image: url("full_background4_1.png");  
-
-     background-size: cover;   
-     background-position: center;
-    margin: auto;
-
-    aspect-ratio: 25.8/9;
-    height: 56.25vw;
-    max-height: 100%;
-
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-        position: relative;
-
+    body{
+        margin: 0px auto;
+        font-family: "proxima-nova",sans-serif;
+        background-color: #191525;
+    }
+    #contenedor {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         overflow: hidden;
-}
+        background-color: #12101a;
+    }
+    aspect_ratio_container {
+        background-image: url("img/fondos/Reino_conejo_fondo.png");  
+        /* background-image: url("img/fondos/Reino_conejo_fondo.png"), url("img/3.gif"); */
+        background-size: cover;   
+        background-position: center;
+        margin: auto;
+        aspect-ratio: 25.8/9;
+        height: 56.25vw;
+        max-height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background-blend-mode: screen;
 
-aspect_ratio {
-    background-size: contain;
-    width: 100%;
-    width: 100vw;
-   height: 56.25vw; 
+    }
+    #area_visible{
+        display: block;
+        height: 100%;
+        width: 100vw;
+        z-index: 2;
+        background-position: center;
+        background-size: cover;
+    }
+    #controles_top {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 100;
+        display: flex;
+        gap: 5px;
+    }
+    .btn-control {
+        background: rgba(25, 21, 37, 0.7); 
+        color: white;
+        border: none;
+        padding: clamp(8px,1.5cqw,9px);
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 4px;
+        backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(54, 216, 255, 0.2);
+        font-size: clamp(8px,1.5cqw,15px);
+        opacity: 0.4;
+    }
+    .btn-control:hover { 
+        opacity: 1;
+        transform: translateY(-2px); 
+    }
+    .btn-control:active {transform: translateY(0px);}
+    .btn-activo {
+        background: #36d8ff;
+        color: #191525;
+        animation: pulse-border 2s infinite;
+        opacity: 1;
+    }
+    @keyframes pulse-border {
+        0% { box-shadow: 0 0 0 0 rgba(54, 216, 255, 0.7); }
+        70% { box-shadow: 0 0 0 10px rgba(54, 216, 255, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(54, 216, 255, 0); }
+    }
+    #version{
+        position: absolute !important;
+        bottom: 10px !important;
+        right: 10px !important;
+        z-index: 999999 !important;
+        color: white !important;
+        opacity: 0.4 !important;
+        pointer-events: none;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 4px 8px !important;
+        border-radius: 4px !important;
+       font-size: clamp(9px, 1.5cqw, 15x);
+        display: block !important;
+        visibility: visible !important;
+    }
 
+    aspect_ratio {
+        background-size: contain;
+        width: 100%;
+        width: 100vw;
+        height: 56.25vw; 
+        max-height: 100dvh;
+        max-width: 177.78vh;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+    }
 
-    max-height: 100dvh;
-    max-width: 177.78vh;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-}
-img{
-    height: 102%;
-   
-    /*  height: 133%;  background-color: #b10a0a7a; */
-    /* margin-top: -23%; */
-    position: absolute;
-    bottom: 0;
-
-}
 #personajes {
       /* background-color: #ffffffb8; */
     display: flex;
@@ -97,7 +148,11 @@ img{
 /* animation: slidein 0.5s forwards; */
 }
 
-
+   .personaje img{
+        height: 102%;
+        position: absolute;
+        bottom: 0;
+    }
 #texto_container {
     /* background-color: black; */
   /*   height: 25%; 
@@ -106,7 +161,7 @@ img{
     width: 100%;
     z-index: 10;
     bottom: 0;
-    padding-bottom: 1.5%;
+    padding-bottom: 0.5%;
 
 }
 #texto {
@@ -114,6 +169,7 @@ img{
     background-color: white;
     background-color: #0a0a0c; 
     background-color: #02020be0;
+    background-color: #02020bd1;
         /* background-color: #02020bc2; */
             backdrop-filter: blur(5px);
             backdrop-filter: blur(2px);
@@ -175,6 +231,7 @@ border-radius: 2vh;
 
 
 
+
 .personaje img{animation-delay: 0.30s;}
 @keyframes slidein {
 from {
@@ -230,6 +287,7 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
     font-size: 1.5cqw;
     
        font-size: clamp(9px,1.5cqw, 2.5rem);
+       border-bottom: solid #ffffff1f 2px;
 }
 /* Colores específicos para cada personaje */
 .color-juli {
@@ -258,7 +316,7 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
 }
 
 #continuar{
-    position: absolute;
+    
     right: 12px;
     bottom: 8px;
     /* right: 4.6%; */
@@ -288,135 +346,6 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
 
 
 
-#controles_top {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    z-index: 100;
-    display: flex;
-
-        gap: 5px;
-   
-   
-}
-#version {
-    position: absolute;
-    bottom: 10px;
-    /* left: 10px; */
-    z-index: 100;
-    color: white;
-     opacity: 0.5;
-
-
-
-         position: absolute !important;
-    bottom: 10px !important;
-    right: 10px !important;
-    z-index: 999999 !important;
-    color: white !important;
-    opacity: 0.4 !important;
-    pointer-events: none;
-    /* font-size: 14px !important; */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 4px 8px !important;
-    border-radius: 4px !important;
-    font-size: 15px!important;
-    display: block !important;
-    visibility: visible !important;
-
-}
-
-.btn-control {
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    /* border: 1px solid white; */
-    padding: 6px 6px;
-    cursor: pointer;
-    font-family: sans-serif;
-  
-    transition: background 0.3s;
-
-        font-size: clamp(9px,1.5cqw, 2.5rem);
-}
-
-.btn-control:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.btn-activo {
-    background: #36d8ff;
-    color: black;
-}
-
-#area_visible{
-    display: block;
-    /* position: absolute; */
-    height: 100%;
-    /* width: 100%; */
-    /* background-color: rgba(255, 0, 0, 0.281); */
-        width: 100vw;
-         /* background-image: url("borde_fondo.png");  */
-         z-index: 2;
-             background-position: center;
-    background-size: cover;
-}
-
-
-
-
-#controles_top {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    z-index: 100;
-    display: flex;
- 
-}
-
-.btn-control {
-    background: rgba(25, 21, 37, 0.7); /* Fondo oscuro semitransparente */
-    color: #ffffff; /* El azul cian de tus nombres */
-    border: 2px solid #ffffff;
-    border: none;
-    padding: clamp(8px,1.5cqw,9px);
-    cursor: pointer;
-    font-family: "proxima-nova", sans-serif;
-    font-size: 0.9rem;
-    font-size: 1cqw;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 4px;
-    backdrop-filter: blur(5px);
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(54, 216, 255, 0.2);
-    
-        font-size: clamp(8px,1.5cqw,15px);
-}
-
-.btn-control:hover {
-    background: #36d8ff;
-    color: #191525;
-    box-shadow: 0 0 20px rgba(54, 216, 255, 0.5);
-    transform: translateY(-2px);
-}
-
-.btn-control:active {
-    transform: translateY(0px);
-}
-
-.btn-activo {
-    background: #36d8ff;
-    color: #191525;
-    animation: pulse-border 2s infinite;
-}
-
-@keyframes pulse-border {
-    0% { box-shadow: 0 0 0 0 rgba(54, 216, 255, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(54, 216, 255, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(54, 216, 255, 0); }
-}
 
 
 
@@ -436,22 +365,27 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
            
             <div id="area_visible">
                 <div id="controles_top">
+                     <button id="btnAtras" class="btn-control btn-bottom" onclick="dialogoAnterior()">← ANTERIOR</button>
                     <button id="btnAuto" class="btn-control" onclick="toggleAuto()">AUTO: OFF</button>
                     <button id="btnFS" class="btn-control" onclick="toggleFullScreen()">PANTALLA COMPLETA</button>
                 </div>
-                <div id="version"> V 0.5.1</div>
+                <div id="version"> V 0.6 </div>
             </div>
             <aspect_ratio>
                 <div id="texto_container">
                     <div id="texto">
                         <div id="nombre"></div>
-                        <p></p>
+                        <div style="display: flex; align-items: baseline;">
+                             <p></p>
                         <div id="continuar">▼</div>
+                        </div>
+                       
                     </div>
+                    <!-- <div id="sub_menu"> sub menu </div> -->
                 </div>
                 <div id="personajes">   
-                    <div class="personaje" ><img class="breathing activo" src="Juli_idle.png"></div>
-                    <div class="personaje"><img class="breathing inactivo" src="Anier_idle.png"></div></div>
+                    <div class="personaje" ><img class="breathing activo" src=""></div>
+                    <div class="personaje"><img class="breathing inactivo" src=""></div></div>
                 </div>
             </aspect_ratio>
         </aspect_ratio_container>
@@ -461,13 +395,13 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
     const personajesData = [
     { 
         nombre: "Aniabet", 
-        idle: "rara_idle.png", 
-        speaking: "rara_idle.png" 
+        idle: "img/personajes/rara_idle.png", 
+        speaking: "img/personajes/rara_idle.png" 
     },
     { 
         nombre: "Anier", 
-        idle: "Anier_idle.png", 
-        speaking: "Anier_idle.png", 
+        idle: "img/personajes/Anier_idle.png", 
+        speaking: "img/personajes/Anier_idle.png", 
         //  speaking: "Anier_speaking.png"
     }
 
@@ -483,8 +417,7 @@ const dialogos = [
     { personaje: 1 , texto: "mmmmmmmmmmmmmmmmmm................." },
     // { personaje: 0, texto: "Su conejísima majestad… han pasado exactamente cuarenta minutos." },
     { personaje: 0, texto: "Pero por la conejisima madre de..." },
-        { personaje: 0, texto: "¡Nier, pasaron 40 minutos, contesta la maldita pregunta!" },
-    { personaje: 0, texto: "¿Puede, responder la pregunta?" },
+        { personaje: 0, texto: "¡Nier, ya pasaron 40 minutos, contesta la maldita pregunta!" },
     { personaje: 1, texto: "Espera un minuto, no fue una pregunta Simple." },
     { personaje: 0, texto: "Literalmente le pregunte si se iba a comportar" },
     { personaje: 1, texto: "Fue una p r e g u n t a c o n t r a m p a." },
@@ -503,6 +436,12 @@ const nombreBox = document.getElementById("nombre");
 const continuar = document.getElementById("continuar");
 const personajes = document.querySelectorAll(".personaje img");
 const btnAuto = document.getElementById("btnAuto");
+const btnAtras = document.getElementById("btnAtras");
+
+// Variables para swipe
+let touchStartX = 0;
+let touchEndX = 0;
+const minSwipeDistance = 50; // Distancia mínima para considerar swipe
 
 // --- LÓGICA DE PERSONAJES ---
 function actualizarPersonajes(activoIndex) {
@@ -579,6 +518,7 @@ function mostrarDialogo() {
     
     actualizarPersonajes(personajeIndex);
     typewriter(dialogo.texto);
+       actualizarBotonAtras();
 }
 
 function siguienteDialogo() {
@@ -596,7 +536,25 @@ function siguienteDialogo() {
     }
     mostrarDialogo();
 }
+function dialogoAnterior() {
+    if (escribiendo) {
+        escrituraID++;
+        textoP.textContent = textoCompletoActual;
+        finalizarTexto();
+    }
+    
+    if (indice > 0) {
+        indice--;
+        mostrarDialogo();
+    }
+}
 
+function actualizarBotonAtras() {
+    if (btnAtras) {
+        btnAtras.disabled = indice === 0;
+        btnAtras.style.opacity = indice === 0 ? '0' : 'revert-layer';
+    }
+}
 // --- CONTROLES ---
 function toggleAuto() {
     autoPlay = !autoPlay;
@@ -608,105 +566,43 @@ function toggleAuto() {
     }
 }
 
-
-// Reemplaza tu función toggleFullScreen actual con estas funciones:
-
-function fullScreen() {
-    return new Promise((resolve, reject) => {
-        const contenedor = document.getElementById("contenedor");
-        
-        if (contenedor.requestFullscreen) {
-            contenedor.requestFullscreen().then(resolve).catch(reject);
-        } else if (contenedor.mozRequestFullScreen) {
-            contenedor.mozRequestFullScreen().then(resolve).catch(reject);
-        } else if (contenedor.webkitRequestFullscreen) {
-            contenedor.webkitRequestFullscreen().then(resolve).catch(reject);
-        } else if (contenedor.msRequestFullscreen) {
-            contenedor.msRequestFullscreen().then(resolve).catch(reject);
-        } else {
-            reject('Fullscreen API no soportada');
-        }
-    });
+// --- FUNCIONES PARA SWIPE ---
+function handleTouchStart(event) {
+    touchStartX = event.touches[0].clientX;
 }
 
-function lockOrientation(orientation) {
-    // Verificar si screen.orientation está disponible
-    if (screen.orientation && screen.orientation.lock) {
-        screen.orientation.lock(orientation)
-            .then(() => {
-                console.log(`Orientación bloqueada a ${orientation}`);
-            })
-            .catch((error) => {
-                console.warn(`No se pudo bloquear la orientación: ${error}`);
-            });
-    } else {
-        console.warn('API de bloqueo de orientación no soportada');
+function handleTouchEnd(event) {
+    touchEndX = event.changedTouches[0].clientX;
+    handleSwipe();
+}
+
+function handleSwipe() {
+    const swipeDistance = touchEndX - touchStartX;
+    
+    // Swipe hacia la derecha (anterior)
+    if (swipeDistance > minSwipeDistance) {
+        dialogoAnterior();
+    }
+    // Swipe hacia la izquierda (siguiente)
+    else if (swipeDistance < -minSwipeDistance) {
+        siguienteDialogo();
     }
 }
 
-function unlockOrientation() {
-    if (screen.orientation && screen.orientation.unlock) {
-        screen.orientation.unlock();
-        console.log('Orientación desbloqueada');
-    }
-}
-
-async function toggleFullScreen() {
-    try {
-        if (!document.fullscreenElement) {
-            // Entrar en pantalla completa y forzar horizontal
-            await fullScreen();
-            
-            // En móviles, forzar landscape
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                // Intentar landscape-primary (preferido) o landscape
-                lockOrientation('landscape');
-            }
-            
-            // Actualizar texto del botón
-            document.getElementById('btnFS').textContent = 'SALIR PANTALLA COMPLETA';
-        } else {
-            // Salir de pantalla completa
-            if (document.exitFullscreen) {
-                await document.exitFullscreen();
-                
-                // Desbloquear orientación al salir
-                unlockOrientation();
-                
-                // Actualizar texto del botón
-                document.getElementById('btnFS').textContent = 'PANTALLA COMPLETA';
-            }
-        }
-    } catch (error) {
-        console.error('Error al cambiar pantalla completa:', error);
-    }
-}
-
-// Escuchar cambios en pantalla completa
-document.addEventListener('fullscreenchange', handleFullscreenChange);
-document.addEventListener('mozfullscreenchange', handleFullscreenChange);
-document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-document.addEventListener('MSFullscreenChange', handleFullscreenChange);
-
-function handleFullscreenChange() {
-    if (!document.fullscreenElement) {
-        // Si salimos de pantalla completa, desbloquear orientación
-        unlockOrientation();
-        document.getElementById('btnFS').textContent = 'PANTALLA COMPLETA';
-    }
-}
-
-// También modificar el evento keydown para usar la nueva función
 document.addEventListener("keydown", (e) => {
     const key = e.key.toLowerCase();
     if (key === "a") toggleAuto();
-    if (key === "f") toggleFullScreen(); // Ahora usa la nueva función
+    if (key === "f") toggleFullScreen(); 
+    if (key === "arrowleft") {
+        e.preventDefault();
+        dialogoAnterior();
+    }
+    if (key === "arrowright") {
+        e.preventDefault();
+        siguienteDialogo();
+    }
     if (key === " " || key === "enter") siguienteDialogo();
 });
-
-
-
-
 
 // --- EVENTOS ---
 textoBox.addEventListener("click", (e) => {
@@ -714,10 +610,14 @@ textoBox.addEventListener("click", (e) => {
     siguienteDialogo();
 });
 
+// Eventos táctiles para swipe
+document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('touchend', handleTouchEnd, false);
 
 // INICIO
 mostrarDialogo();
 </script>
+ <script src="js/fullscreen.js"></script> 
 <script>
 
 
