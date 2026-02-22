@@ -23,7 +23,6 @@
     }
     aspect_ratio_container {
         background-image: url("img/fondos/Reino_conejo_fondo.png");  
-        /* background-image: url("img/fondos/Reino_conejo_fondo.png"), url("img/3.gif"); */
         background-size: cover;   
         background-position: center;
         margin: auto;
@@ -121,31 +120,20 @@
     }
 
 #personajes {
-      /* background-color: #ffffffb8; */
     display: flex;
     justify-content: center;
     height: 100%;
     width: 100%;
     justify-content: space-around;
-
-
     position: absolute;
     bottom: 0;
-
-
 }
 .personaje{
-    /* background-color: #0000ff1f; */
-    /* margin: 25px; */
-    /* margin: 2%; */
-  /*   animation: slidein 0.5s forwards; */
     width: 25%;
     height: 100%;
-    /* width: auto; */
     display: flex;
     justify-content: center;
     position: relative;
-/* animation: slidein 0.5s forwards; */
 }
 
    .personaje img{
@@ -154,9 +142,6 @@
         bottom: 0;
     }
 #texto_container {
-    /* background-color: black; */
-  /*   height: 25%; 
-    min-height: 20%; */
     position: absolute;
     width: 100%;
     z-index: 10;
@@ -166,48 +151,22 @@
 }
 #texto {
     height: 100%;
-    background-color: white;
-    background-color: #0a0a0c; 
-    background-color: #02020be0;
     background-color: #02020bd1;
-        /* background-color: #02020bc2; */
-            backdrop-filter: blur(5px);
-            backdrop-filter: blur(2px);
-
-    /* margin-bottom: 10%; */
-    margin-left: 2%;
-    margin-right: 2%;
-
-
-
-
-
-        margin-left: 15%;
+    backdrop-filter: blur(2px);
+    margin-left: 15%;
     margin-right: 15%;
-    /* margin-bottom: 10%; */
-    border-radius: 0px;
+    border-radius: 2vh;
     color: white;
-    
-    /* border: solid 4px #ffffff; */
-        padding: 2.1%;
+    padding: 2.1%;
     box-sizing: border-box;
-/* clip-path: polygon(0% 3%,0 33%,1.5% 45%,2% 99%,53% 97%,100% 100%,99.5% 70%,98% 44%,99% 1%,65% 3%,36% 1%); */
-/* clip-path: polygon(0% 3%, 0 33%, 1.5% 45%, 2% 99%, 53% 97%, 100% 100%, 99.5% 70%, 98% 44%, 99% 1%, 65% 3%, 36% 1%); */
-
-border-radius: 6px;
-border-radius: 2vh;
-  padding-top: 0.5%;
+    border-radius: 2vh;
+    padding-top: 0.5%;
 }
-
 
 #texto p{
       margin: 0;
        font-size: 2.5cqw; 
-   
 }
-
-
-
 
 @keyframes breathing {
   50% {
@@ -226,12 +185,6 @@ border-radius: 2vh;
     transform:  scaleY( 1);
   }}
 
-
-
-
-
-
-
 .personaje img{animation-delay: 0.30s;}
 @keyframes slidein {
 from {
@@ -239,11 +192,8 @@ width: 0px;
 transform: scale(0);
 opacity: 0;
 }
-to {/* width: 150px; This will change for each element *//* width: fit-content; *//* width: 100%; */width: 25%;            /*This will change for each element */transform: scale(1);opacity: 1;}
+to {width: 25%; transform: scale(1);opacity: 1;}
 }
-
-
-
 
 .personaje img {
     animation-delay: 0.30s;
@@ -253,7 +203,6 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
    animation: breathing 1.5s ease-out infinite normal;
     transform-origin: bottom;
 }
-
 
 .personaje img{
     transition: 
@@ -272,62 +221,42 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
 
 .inactivo{
     filter: brightness(0.5) grayscale(0.4);
-    /* transform: scale(0.95); */
     margin-bottom: -4%;
-    /* opacity: 0.8; */
 }
-
 
 #nombre{
+    height: auto;
     font-weight: bold;
-    color: #36d8ff;
-    border-bottom: solid #202029 2px;
+    border-bottom: solid #ffffff1f 2px;
     padding: 8px 12px 0px 12px;
-    /* font-size: 18px; */
-    font-size: 1.5cqw;
-    
-       font-size: clamp(9px,1.5cqw, 2.5rem);
-       border-bottom: solid #ffffff1f 2px;
-}
-/* Colores específicos para cada personaje */
-.color-juli {
-    color: #36d8ff !important; /* Azul cian */
+    font-size: clamp(9px,1.5cqw, 2.5rem);
 }
 
-.color-nix {
-    color: #ff69b4 !important; /* Rosa */
+/* Estilos específicos para cada personaje usando sus IDs */
+#nombre[data-personaje="aniabet"] {
+    color: #ffffff !important; /* Blanco para Aniabet */
+}
+
+#nombre[data-personaje="anier"] {
+    color: #ff69b4 !important; /* Rosa para Anier */
 }
 
 #texto p{
     padding: 8px 12px 12px 12px;
-    font-size: 1.5cqw;
+    font-size: clamp(9px,1.5cqw, 2.5rem);
     margin-top: 1%;
-
-
-    /* font-family: cursive; */
-    /* font-family: monospace; */
     line-height: 167%;
-    
-
-
-    
-         font-size: clamp(9px,1.5cqw, 2.5rem);
-         padding: 0px 10px !important;
+    padding: 0px 10px !important;
 }
 
 #continuar{
-    
     right: 12px;
     bottom: 8px;
-    /* right: 4.6%; */
-    /* bottom: 15.4%; */
     opacity: 0;
-    font-size: 18px;
-    font-size: 2cqw;
-     font-size: clamp(8px,1.5cqw,15px);
-   animation: blink 1s infinite; 
+    font-size: clamp(8px,1.5cqw,15px);
+    animation: blink 1s infinite; 
     pointer-events: none;
-   
+    transition: opacity 0.3s ease;
 }
 
 #continuar.visible{
@@ -339,89 +268,97 @@ to {/* width: 150px; This will change for each element *//* width: fit-content; 
     50%{opacity:1}
 }
 
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 400px) {
  #texto{ margin-left: 2%; margin-right: 2%;border-radius: 6px;}
-
-
 }
-
-
 </style>
 </head>
 
 <body>
     <div id="contenedor">
         <aspect_ratio_container>
-           
             <div id="area_visible">
                 <div id="controles_top">
                      <button id="btnAtras" class="btn-control btn-bottom" onclick="dialogoAnterior()">← ANTERIOR</button>
                     <button id="btnAuto" class="btn-control" onclick="toggleAuto()">AUTO: OFF</button>
                     <button id="btnFS" class="btn-control" onclick="toggleFullScreen()">PANTALLA COMPLETA</button>
                 </div>
-                <div id="version"> V 0.6 </div>
+                <div id="version"> V 0.7.1 </div>
             </div>
             <aspect_ratio>
                 <div id="texto_container">
                     <div id="texto">
-                        <div id="nombre"></div>
+                        <div id="nombre" data-personaje=""></div>
                         <div style="display: flex; align-items: baseline;">
                              <p></p>
                         <div id="continuar">▼</div>
                         </div>
-                       
                     </div>
-                    <!-- <div id="sub_menu"> sub menu </div> -->
                 </div>
                 <div id="personajes">   
-                    <div class="personaje" ><img class="breathing activo" src=""></div>
-                    <div class="personaje"><img class="breathing inactivo" src=""></div></div>
+                    <div class="personaje" data-personaje-id="aniabet"><img class="breathing activo" src=""></div>
+                    <div class="personaje" data-personaje-id="anier"><img class="breathing inactivo" src=""></div>
                 </div>
             </aspect_ratio>
         </aspect_ratio_container>
     </div>
    
 <script>
-    const personajesData = [
-    { 
+    // Estructura mejorada de personajes con IDs únicos
+  // 1. Configuración de personajes con soporte para String o Array en emociones
+const personajesData = {
+    aniabet: { 
+        uid: "aniabet",
         nombre: "Aniabet", 
-        idle: "img/personajes/rara_idle.png", 
-        speaking: "img/personajes/rara_idle.png" 
+        color: "#36d8ff", // Color definido aquí
+        emocionActual: "normal",
+        emociones: {
+            normal: ["img/personajes/Aniabet_idle.png", "img/personajes/Aniabet_speaking.png"],
+            idle_2: ["img/personajes/Aniabet_idle_2.png", "img/personajes/Aniabet_speaking.png"],
+            pensativa: "img/personajes/Aniabet_thinking.png" 
+        }
+    },
+    anier: { 
+        uid: "anier",
+        nombre: "Anier", 
+        color: "#ff69b4", // Color definido aquí
+        emocionActual: "normal",
+        emociones: {
+            normal: "img/personajes/Anier_idle.png",
+            sorprendida: ["img/personajes/Anier_surp.png", "img/personajes/Anier_surp_talk.png"]
+        }
+    }
+};
+// 2. Guion con lógica de personaje_activo y estados múltiples
+const dialogos = [
+    { 
+        personaje_activo: "anier", 
+        texto: "mmmm...",
+        emociones: { anier: "normal", aniabet: "normal" } 
     },
     { 
-        nombre: "Anier", 
-        idle: "img/personajes/Anier_idle.png", 
-        speaking: "img/personajes/Anier_idle.png", 
-        //  speaking: "Anier_speaking.png"
+        personaje_activo: "anier", 
+        texto: "mmmmmmmmmmmmmmmmmm.................",
+               emociones: { anier: "normal", aniabet: "normal" } 
+    },
+    { 
+        personaje_activo: "aniabet", 
+        texto: "¡Nier, ya pasaron 40 minutos, contesta la maldita pregunta!",
+               emociones: { anier: "normal", aniabet: "idle_2" } 
+    },
+    { 
+        personaje_activo: null, 
+        texto: "Un silencio incómodo inunda la habitación...",
+                emociones: { anier: "normal", aniabet: "idle_2" } 
+    },
+    { 
+        personaje_activo: "anier", 
+        texto: "Espera un minuto, no fue una pregunta Simple.",
+                emociones: { anier: "normal", aniabet: "idle_2" } 
     }
+];
 
-];
-    // Colores para cada personaje (índice 0 = Juli, 1 = Nix)
-const coloresPersonajes = [
-    'color-juli',  // Azul
-    'color-nix'    // Rosa
-];
-const dialogos = [
-    { personaje: 1 , texto: "mmmm..." },
-    { personaje: 1 , texto: "mmmmmmmmm........." },
-    { personaje: 1 , texto: "mmmmmmmmmmmmmmmmmm................." },
-    // { personaje: 0, texto: "Su conejísima majestad… han pasado exactamente cuarenta minutos." },
-    { personaje: 0, texto: "Pero por la conejisima madre de..." },
-        { personaje: 0, texto: "¡Nier, ya pasaron 40 minutos, contesta la maldita pregunta!" },
-    { personaje: 1, texto: "Espera un minuto, no fue una pregunta Simple." },
-    { personaje: 0, texto: "Literalmente le pregunte si se iba a comportar" },
-    { personaje: 1, texto: "Fue una p r e g u n t a c o n t r a m p a." },
-];
+
 
 let indice = 0;
 let escribiendo = false;
@@ -429,65 +366,114 @@ let autoPlay = false;
 let autoDelay = 3000;
 let escrituraID = 0;
 let textoCompletoActual = "";
+let timeoutCambioSprite = null;
 
 const textoBox = document.getElementById("texto");
 const textoP = textoBox.querySelector("p");
 const nombreBox = document.getElementById("nombre");
 const continuar = document.getElementById("continuar");
-const personajes = document.querySelectorAll(".personaje img");
+const personajesImages = document.querySelectorAll(".personaje img");
 const btnAuto = document.getElementById("btnAuto");
 const btnAtras = document.getElementById("btnAtras");
 
-// Variables para swipe
-let touchStartX = 0;
-let touchEndX = 0;
-const minSwipeDistance = 50; // Distancia mínima para considerar swipe
+// --- LÓGICA DE SPRITES DINÁMICOS ---
+function getSpriteUrl(personajeUID, tipo) {
+    const personaje = personajesData[personajeUID];
+    if (!personaje) return "";
+    
+    const dataEmocion = personaje.emociones[personaje.emocionActual];
+    
+    // Si la emoción es un Array: [0] = idle, [1] = speaking
+    if (Array.isArray(dataEmocion)) {
+        return (tipo === "speaking" && dataEmocion[1]) ? dataEmocion[1] : dataEmocion[0];
+    }
+    
+    // Si es un String, se usa para ambos estados
+    return dataEmocion;
+}
 
-// --- LÓGICA DE PERSONAJES ---
-function actualizarPersonajes(activoIndex) {
-    personajes.forEach((p, i) => {
-        if (i === activoIndex) {
-            p.classList.add("activo");
-            p.classList.remove("inactivo");
+function actualizarVisualPersonajes(activoUID) {
+    personajesImages.forEach((img) => {
+        const personajeDiv = img.closest('.personaje');
+        const uid = personajeDiv.dataset.personajeId;
+        
+        if (uid === activoUID) {
+            img.classList.add("activo");
+            img.classList.remove("inactivo");
         } else {
-            p.classList.add("inactivo");
-            p.classList.remove("activo");
-            p.src = personajesData[i].idle;
+            img.classList.add("inactivo");
+            img.classList.remove("activo");
         }
+        // Siempre actualizar al idle de la emoción actual al cambiar de turno
+        img.src = getSpriteUrl(uid, "idle");
     });
 }
 
-// --- LÓGICA DE TYPEWRITER ---
+// --- NÚCLEO DEL JUEGO ---
+function mostrarDialogo() {
+    const evento = dialogos[indice];
+
+    // Actualizar emociones de cualquier personaje mencionado en el evento
+    if (evento.emociones) {
+        for (const [uid, nuevaEmocion] of Object.entries(evento.emociones)) {
+            if (personajesData[uid]) {
+                personajesData[uid].emocionActual = nuevaEmocion;
+            }
+        }
+    }
+
+    const activoUID = evento.personaje_activo;
+    
+   // 2. Gestión de Nombre y Color dinámico
+    if (activoUID && personajesData[activoUID]) {
+        const p = personajesData[activoUID];
+        nombreBox.style.height = "auto";
+        nombreBox.style.opacity = 1;
+        nombreBox.textContent = p.nombre;
+        nombreBox.style.color = p.color; // Aplicamos el color desde personajesData
+    } else {
+        // Narrador: Altura 0 y oculto
+        nombreBox.style.opacity = 0;
+        nombreBox.style.height = "0px";
+     
+    }
+    
+    actualizarVisualPersonajes(activoUID);
+    typewriter(evento.texto);
+    actualizarBotonAtras();
+}
+
 function typewriter(texto, velocidad = 25) {
+    if (timeoutCambioSprite) clearTimeout(timeoutCambioSprite);
+    
     escrituraID++;
     const idActual = escrituraID;
-
     escribiendo = true;
     
-    // El indicador de continuar desaparece totalmente
+    // El indicador de continuar desaparece
     continuar.style.visibility = "hidden";
     continuar.classList.remove("visible");
-
     textoCompletoActual = texto;
     textoP.textContent = "";
 
-    // Cambiar sprite a hablando
-    const pIndex = dialogos[indice].personaje;
-    personajes[pIndex].src = personajesData[pIndex].speaking;
+    const activoUID = dialogos[indice].personaje_activo;
+    
+    // Si hay alguien hablando, poner su sprite de 'speaking'
+    if (activoUID) {
+        const img = document.querySelector(`.personaje[data-personaje-id="${activoUID}"] img`);
+        img.src = getSpriteUrl(activoUID, "speaking");
+    }
 
     let i = 0;
     function escribir() {
         if (idActual !== escrituraID) return;
-
         if (i < texto.length) {
             textoP.textContent += texto[i];
             i++;
             setTimeout(escribir, velocidad);
         } else {
             finalizarTexto();
-            if (autoPlay) {
-                setTimeout(siguienteDialogo, autoDelay);
-            }
+            if (autoPlay) setTimeout(siguienteDialogo, autoDelay);
         }
     }
     escribir();
@@ -495,30 +481,17 @@ function typewriter(texto, velocidad = 25) {
 
 function finalizarTexto() {
     escribiendo = false;
-    const pIndex = dialogos[indice].personaje;
+    const activoUID = dialogos[indice].personaje_activo;
     
-    // El personaje vuelve a estar quieto
-    personajes[pIndex].src = personajesData[pIndex].idle;
-    
-    // Aparece el indicador de "Siguiente"
-    continuar.style.visibility = "visible";
-    continuar.classList.add("visible");
-}
-
-function mostrarDialogo() {
-    const dialogo = dialogos[indice];
-    const personajeIndex = dialogo.personaje;
-    
-    // Actualizar nombre y color
-    nombreBox.textContent = personajesData[personajeIndex].nombre;
-    
-    // Remover todas las clases de color y agregar la correspondiente
-    nombreBox.className = ''; // Limpiar clases anteriores
-    nombreBox.classList.add(coloresPersonajes[personajeIndex]);
-    
-    actualizarPersonajes(personajeIndex);
-    typewriter(dialogo.texto);
-       actualizarBotonAtras();
+    timeoutCambioSprite = setTimeout(() => {
+        if (activoUID) {
+            const img = document.querySelector(`.personaje[data-personaje-id="${activoUID}"] img`);
+            img.src = getSpriteUrl(activoUID, "idle");
+        }
+        // Aparece el indicador de "Siguiente"
+        continuar.style.visibility = "visible";;
+        continuar.classList.add("visible");
+    }, 400); 
 }
 
 function siguienteDialogo() {
@@ -528,21 +501,13 @@ function siguienteDialogo() {
         finalizarTexto();
         return;
     }
-
-    indice++;
-    if (indice >= dialogos.length) {
-        console.log("Escena terminada");
-        return;
+    if (indice < dialogos.length - 1) {
+        indice++;
+        mostrarDialogo();
     }
-    mostrarDialogo();
 }
+
 function dialogoAnterior() {
-    if (escribiendo) {
-        escrituraID++;
-        textoP.textContent = textoCompletoActual;
-        finalizarTexto();
-    }
-    
     if (indice > 0) {
         indice--;
         mostrarDialogo();
@@ -550,79 +515,33 @@ function dialogoAnterior() {
 }
 
 function actualizarBotonAtras() {
-    if (btnAtras) {
-        btnAtras.disabled = indice === 0;
-        btnAtras.style.opacity = indice === 0 ? '0' : 'revert-layer';
-    }
+    btnAtras.style.opacity = indice === 0 ? '0' : 'revert-layer';
+    btnAtras.disabled = (indice === 0);
 }
-// --- CONTROLES ---
+
+// --- CONTROLES E INTERFAZ ---
 function toggleAuto() {
     autoPlay = !autoPlay;
     btnAuto.classList.toggle("btn-activo");
-    btnAuto.textContent = autoPlay ? "Auto: ON" : "Auto OFF";
-    
-    if (autoPlay && !escribiendo) {
-        setTimeout(siguienteDialogo, autoDelay);
-    }
-}
-
-// --- FUNCIONES PARA SWIPE ---
-function handleTouchStart(event) {
-    touchStartX = event.touches[0].clientX;
-}
-
-function handleTouchEnd(event) {
-    touchEndX = event.changedTouches[0].clientX;
-    handleSwipe();
-}
-
-function handleSwipe() {
-    const swipeDistance = touchEndX - touchStartX;
-    
-    // Swipe hacia la derecha (anterior)
-    if (swipeDistance > minSwipeDistance) {
-        dialogoAnterior();
-    }
-    // Swipe hacia la izquierda (siguiente)
-    else if (swipeDistance < -minSwipeDistance) {
-        siguienteDialogo();
-    }
+    btnAuto.textContent = autoPlay ? "Auto: ON" : "Auto: OFF";
+    if (autoPlay && !escribiendo) siguienteDialogo();
 }
 
 document.addEventListener("keydown", (e) => {
     const key = e.key.toLowerCase();
+    if (key === " " || key === "enter" || key === "arrowright") siguienteDialogo();
+    if (key === "arrowleft") dialogoAnterior();
     if (key === "a") toggleAuto();
-    if (key === "f") toggleFullScreen(); 
-    if (key === "arrowleft") {
-        e.preventDefault();
-        dialogoAnterior();
-    }
-    if (key === "arrowright") {
-        e.preventDefault();
-        siguienteDialogo();
-    }
-    if (key === " " || key === "enter") siguienteDialogo();
 });
 
-// --- EVENTOS ---
 textoBox.addEventListener("click", (e) => {
-    e.stopPropagation(); // Evita conflictos si hay otros clicks
+    e.stopPropagation();
     siguienteDialogo();
 });
 
-// Eventos táctiles para swipe
-document.addEventListener('touchstart', handleTouchStart, false);
-document.addEventListener('touchend', handleTouchEnd, false);
-
-// INICIO
+// Inicio del motor
 mostrarDialogo();
 </script>
- <script src="js/fullscreen.js"></script> 
-<script>
-
-
-</script>
-
+<script src="js/fullscreen.js"></script> 
 </body>
-
 </html>
