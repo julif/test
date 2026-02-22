@@ -376,6 +376,11 @@ const personajesImages = document.querySelectorAll(".personaje img");
 const btnAuto = document.getElementById("btnAuto");
 const btnAtras = document.getElementById("btnAtras");
 
+// Variables para swipe
+let touchStartX = 0;
+let touchEndX = 0;
+const minSwipeDistance = 50; // Distancia mínima para considerar swipe
+
 // --- LÓGICA DE SPRITES DINÁMICOS ---
 function getSpriteUrl(personajeUID, tipo) {
     const personaje = personajesData[personajeUID];
@@ -526,7 +531,28 @@ function toggleAuto() {
     btnAuto.textContent = autoPlay ? "Auto: ON" : "Auto: OFF";
     if (autoPlay && !escribiendo) siguienteDialogo();
 }
+// --- FUNCIONES PARA SWIPE ---
+function handleTouchStart(event) {
+    touchStartX = event.touches[0].clientX;
+}
 
+function handleTouchEnd(event) {
+    touchEndX = event.changedTouches[0].clientX;
+    handleSwipe();
+}
+
+function handleSwipe() {
+    const swipeDistance = touchEndX - touchStartX;
+    
+    // Swipe hacia la derecha (anterior)
+    if (swipeDistance > minSwipeDistance) {
+        dialogoAnterior();
+    }
+    // Swipe hacia la izquierda (siguiente)
+    else if (swipeDistance < -minSwipeDistance) {
+        siguienteDialogo();
+    }
+}
 document.addEventListener("keydown", (e) => {
     const key = e.key.toLowerCase();
     if (key === " " || key === "enter" || key === "arrowright") siguienteDialogo();
@@ -539,7 +565,11 @@ textoBox.addEventListener("click", (e) => {
     siguienteDialogo();
 });
 
-// Inicio del motor
+// Eventos táctiles para swipe
+document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('touchend', handleTouchEnd, false);
+
+// INICIO
 mostrarDialogo();
 </script>
 <script src="js/fullscreen.js"></script> 
