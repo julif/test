@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>v 0.6</title>
+    <title>v 0.8</title>
 <style>
     body{
         margin: 0px auto;
@@ -45,14 +45,18 @@
         background-position: center;
         background-size: cover;
     }
-    #controles_top {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        z-index: 100;
-        display: flex;
-        gap: 5px;
-    }
+#controles_top {
+    /* position: absolute; */
+    top: 5px;
+    right: 5px;
+    z-index: 100;
+    display: flex;
+    gap: 5px;
+
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+}
     .btn-control {
         background: rgba(25, 21, 37, 0.7); 
         color: white;
@@ -79,7 +83,10 @@
         color: #191525;
         animation: pulse-border 2s infinite;
         opacity: 1;
+    
+        background-color: white;
     }
+      .btn-activo img {    filter: invert(1);}
     @keyframes pulse-border {
         0% { box-shadow: 0 0 0 0 rgba(54, 216, 255, 0.7); }
         70% { box-shadow: 0 0 0 10px rgba(54, 216, 255, 0); }
@@ -271,6 +278,182 @@ to {width: 25%; transform: scale(1);opacity: 1;}
 @media (max-width: 400px) {
  #texto{ margin-left: 2%; margin-right: 2%;border-radius: 6px;}
 }
+
+button img{
+    height: clamp(16px,1.5cqw,30px);
+}
+
+/* Estilos para modales */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #2a2438, #1a1528);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 1px solid #36d8ff33;
+    box-shadow: 0 0 30px rgba(54, 216, 255, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-content h2 {
+    color: #36d8ff;
+    margin-top: 0;
+    border-bottom: 1px solid #36d8ff33;
+    padding-bottom: 10px;
+    font-size: clamp(16px, 2.5cqw, 24px);
+}
+
+.modal-content h3 {
+    color: #ff69b4;
+    margin: 15px 0 10px 0;
+    font-size: clamp(14px, 2cqw, 20px);
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal-content li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ffffff1a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(12px, 1.8cqw, 16px);
+}
+
+.modal-content li:last-child {
+    border-bottom: none;
+}
+
+.modal-content .shortcut-key {
+    background: #36d8ff22;
+    border: 1px solid #36d8ff;
+    color: #36d8ff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-weight: bold;
+    min-width: 60px;
+    text-align: center;
+}
+
+.modal-content .swipe-icon {
+    background: #ff69b422;
+    border: 1px solid #ff69b4;
+    color: #ff69b4;
+    padding: 3px 8px;
+    border-radius: 4px;
+    min-width: 60px;
+    text-align: center;
+}
+
+.close-modal {
+    background: #36d8ff;
+    color: #191525;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 15px;
+    font-size: clamp(12px, 1.8cqw, 16px);
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    background: #ff69b4;
+    transform: translateY(-2px);
+}
+
+#historial-contenido {
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 15px 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.historial-item {
+    padding: 10px;
+    border-bottom: 1px solid #ffffff1a;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.historial-item:last-child {
+    border-bottom: none;
+}
+
+.historial-nombre {
+    font-weight: bold;
+    min-width: 80px;
+}
+
+.historial-nombre.aniabet {
+    color: #36d8ff !important;
+}
+
+.historial-nombre.anier {
+    color: #ff69b4 !important;
+}
+
+.historial-nombre.narrador {
+    color: #888;
+    font-style: italic;
+}
+
+.historial-texto {
+    flex: 1;
+    color: white;
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+    .mobile-only {
+        display: block;
+    }
+}
 </style>
 </head>
 
@@ -279,11 +462,20 @@ to {width: 25%; transform: scale(1);opacity: 1;}
         <aspect_ratio_container>
             <div id="area_visible">
                 <div id="controles_top">
-                     <button id="btnAtras" class="btn-control btn-bottom" onclick="dialogoAnterior()">← ANTERIOR</button>
-                    <button id="btnAuto" class="btn-control" onclick="toggleAuto()">AUTO: OFF</button>
-                    <button id="btnFS" class="btn-control" onclick="toggleFullScreen()">PANTALLA COMPLETA</button>
+                    <div>
+                        <button id="btnInfo" class="btn-control" onclick="abrirModalInfo()"  ><img src="info.svg" alt="info"></button>
+                    <button id="btnHistorial" class="btn-control" onclick="abrirModalHistorial()"><img src="clipboard.svg" alt="historial"></button>
+                    <button id="btnAuto" class="btn-control" onclick="toggleAuto()"><img src="play.svg" class="auto-icon" id="autoIcon" alt="auto"></button>
+                    <button id="btnAtras" class="btn-control btn-bottom" onclick="dialogoAnterior()"><img src="back.svg" alt="atrás"></button>
+                    </div>
+                    <div>
+                         <button id="btnFS" class="btn-control" onclick="toggleFullScreen()"><img class="full-icon" id="fullIcon" src="fullscreen_2.svg" alt="pantalla completa"></button>
+                    </div>
+                    
+
+                   
                 </div>
-                <div id="version"> V 0.7.1 </div>
+                <div id="version"> V 0.8 </div>
             </div>
             <aspect_ratio>
                 <div id="texto_container">
@@ -302,10 +494,50 @@ to {width: 25%; transform: scale(1);opacity: 1;}
             </aspect_ratio>
         </aspect_ratio_container>
     </div>
+
+    <!-- Modal de Información (Atajos) -->
+    <div id="modalInfo" class="modal-overlay" onclick="cerrarModalInfo(event)">
+        <div class="modal-content">
+            <h2>Controles</h2>
+            <div class="desktop-only">
+                <h3>Atajos de Teclado</h3>
+                <ul>
+                    <li><span class="shortcut-key">Espacio</span> Siguiente diálogo</li>
+                    <li><span class="shortcut-key">Enter</span> Siguiente diálogo</li>
+                    <li><span class="shortcut-key">→</span> Siguiente diálogo</li>
+                    <li><span class="shortcut-key">←</span> Diálogo anterior</li>
+                    <li><span class="shortcut-key">A</span> Auto-play</li>
+                    <li><span class="shortcut-key">F</span> Pantalla completa</li>
+                    <li><span class="shortcut-key">I</span> Abrir información</li>
+                    <li><span class="shortcut-key">H</span> Abrir historial</li>
+                </ul>
+            </div>
+            <div class="mobile-only">
+                <h3>Controles Táctiles</h3>
+                <ul>
+                    <li><span class="swipe-icon">← Deslizar</span> Diálogo anterior</li>
+                    <li><span class="swipe-icon">Deslizar →</span> Siguiente diálogo</li>
+                    <li><span class="swipe-icon">Tap</span> Siguiente diálogo</li>
+                </ul>
+            </div>
+            <button class="close-modal" onclick="cerrarModalInfo()">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Modal de Historial -->
+    <div id="modalHistorial" class="modal-overlay" onclick="cerrarModalHistorial(event)">
+        <div class="modal-content">
+            <h2>Historial de Diálogos</h2>
+            <div id="historial-contenido">
+                <!-- Aquí se insertará el historial dinámicamente -->
+            </div>
+            <button class="close-modal" onclick="cerrarModalHistorial()">Cerrar</button>
+        </div>
+    </div>
    
 <script>
     // Estructura mejorada de personajes con IDs únicos
-  // 1. Configuración de personajes con soporte para String o Array en emociones
+    // 1. Configuración de personajes con soporte para String o Array en emociones
 const personajesData = {
     aniabet: { 
         uid: "aniabet",
@@ -313,7 +545,7 @@ const personajesData = {
         color: "#36d8ff", // Color definido aquí
         emocionActual: "normal",
         emociones: {
-            normal: ["img/personajes/Aniabet_idle.png", "img/personajes/Aniabet_speaking.png"],
+            normal: [ "img/personajes/Aniabet_idle_5.png", "img/personajes/Aniabet_idle_5.png"],
             idle_2: ["img/personajes/Aniabet_idle_2.png", "img/personajes/Aniabet_speaking.png"],
             pensativa: "img/personajes/Aniabet_thinking.png" 
         }
@@ -344,21 +576,19 @@ const dialogos = [
     { 
         personaje_activo: "aniabet", 
         texto: "¡Nier, ya pasaron 40 minutos, contesta la maldita pregunta!",
-               emociones: { anier: "normal", aniabet: "idle_2" } 
+               emociones: { anier: "normal", aniabet: "normal" } 
     },
     { 
         personaje_activo: null, 
         texto: "Un silencio incómodo inunda la habitación...",
-                emociones: { anier: "normal", aniabet: "idle_2" } 
+                emociones: { anier: "normal", aniabet: "normal" } 
     },
     { 
         personaje_activo: "anier", 
         texto: "Espera un minuto, no fue una pregunta Simple.",
-                emociones: { anier: "normal", aniabet: "idle_2" } 
+                emociones: { anier: "normal", aniabet: "normal" } 
     }
 ];
-
-
 
 let indice = 0;
 let escribiendo = false;
@@ -367,6 +597,7 @@ let autoDelay = 3000;
 let escrituraID = 0;
 let textoCompletoActual = "";
 let timeoutCambioSprite = null;
+let historialDialogos = []; // Array para almacenar el historial
 
 const textoBox = document.getElementById("texto");
 const textoP = textoBox.querySelector("p");
@@ -375,11 +606,78 @@ const continuar = document.getElementById("continuar");
 const personajesImages = document.querySelectorAll(".personaje img");
 const btnAuto = document.getElementById("btnAuto");
 const btnAtras = document.getElementById("btnAtras");
+const modalInfo = document.getElementById("modalInfo");
+const modalHistorial = document.getElementById("modalHistorial");
+const historialContenido = document.getElementById("historial-contenido");
 
 // Variables para swipe
 let touchStartX = 0;
 let touchEndX = 0;
 const minSwipeDistance = 50; // Distancia mínima para considerar swipe
+
+// --- FUNCIONES PARA MODALES ---
+function abrirModalInfo() {
+    modalInfo.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevenir scroll del fondo
+}
+
+function cerrarModalInfo(event) {
+    if (event && event.target !== modalInfo) return; // Solo cerrar si se hace clic en el overlay
+    modalInfo.classList.remove('active');
+    document.body.style.overflow = ''; // Restaurar scroll
+}
+
+function abrirModalHistorial() {
+    actualizarHistorial();
+    modalHistorial.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function cerrarModalHistorial(event) {
+    if (event && event.target !== modalHistorial) return;
+    modalHistorial.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function agregarAlHistorial(nombre, texto) {
+    const uid = nombre ? Object.values(personajesData).find(p => p.nombre === nombre)?.uid : null;
+    
+    historialDialogos.push({
+        nombre: nombre || 'Narrador',
+        texto: texto,
+        uid: uid,
+        timestamp: new Date().getTime()
+    });
+    
+    // Mantener solo los últimos 50 diálogos para no sobrecargar
+    if (historialDialogos.length > 50) {
+        historialDialogos.shift();
+    }
+}
+
+function actualizarHistorial() {
+    if (!historialContenido) return;
+    
+    let html = '';
+    historialDialogos.forEach(item => {
+        const esNarrador = item.nombre === 'Narrador';
+        const clasePersonaje = item.uid ? item.uid : '';
+        html += `
+            <div class="historial-item">
+                <div class="historial-nombre ${clasePersonaje} ${esNarrador ? 'narrador' : ''}">${item.nombre}</div>
+                <div class="historial-texto">${item.texto}</div>
+            </div>
+        `;
+    });
+    
+    if (historialDialogos.length === 0) {
+        html = '<div style="text-align: center; color: #888; padding: 20px;">No hay diálogos en el historial</div>';
+    }
+    
+    historialContenido.innerHTML = html;
+    // Scroll al final del historial
+    historialContenido.scrollTop = historialContenido.scrollHeight;
+}
 
 // --- LÓGICA DE SPRITES DINÁMICOS ---
 function getSpriteUrl(personajeUID, tipo) {
@@ -429,18 +727,21 @@ function mostrarDialogo() {
 
     const activoUID = evento.personaje_activo;
     
-   // 2. Gestión de Nombre y Color dinámico
+    // 2. Gestión de Nombre y Color dinámico
     if (activoUID && personajesData[activoUID]) {
         const p = personajesData[activoUID];
         nombreBox.style.height = "auto";
         nombreBox.style.opacity = 1;
+        textoP.style.opacity = 1;
         nombreBox.textContent = p.nombre;
-        nombreBox.style.color = p.color; // Aplicamos el color desde personajesData
+        nombreBox.style.color = p.color;
+        agregarAlHistorial(p.nombre, evento.texto);
     } else {
         // Narrador: Altura 0 y oculto
         nombreBox.style.opacity = 0;
+        textoP.style.opacity = 0.4;
         nombreBox.style.height = "0px";
-     
+        agregarAlHistorial(null, evento.texto);
     }
     
     actualizarVisualPersonajes(activoUID);
@@ -494,7 +795,7 @@ function finalizarTexto() {
             img.src = getSpriteUrl(activoUID, "idle");
         }
         // Aparece el indicador de "Siguiente"
-        continuar.style.visibility = "visible";;
+        continuar.style.visibility = "visible";
         continuar.classList.add("visible");
     }, 400); 
 }
@@ -528,9 +829,11 @@ function actualizarBotonAtras() {
 function toggleAuto() {
     autoPlay = !autoPlay;
     btnAuto.classList.toggle("btn-activo");
-    btnAuto.textContent = autoPlay ? "Auto: ON" : "Auto: OFF";
+     const autoIcon = document.getElementById('autoIcon');
+    autoIcon.src = autoPlay ? 'pause.svg' : 'play.svg';
     if (autoPlay && !escribiendo) siguienteDialogo();
 }
+
 // --- FUNCIONES PARA SWIPE ---
 function handleTouchStart(event) {
     touchStartX = event.touches[0].clientX;
@@ -553,11 +856,24 @@ function handleSwipe() {
         siguienteDialogo();
     }
 }
+
+// --- EVENT LISTENERS ---
 document.addEventListener("keydown", (e) => {
     const key = e.key.toLowerCase();
+    
+    // Evitar que los atajos activen elementos del formulario
+    if (key === " " || key === "enter" || key === "arrowright" || 
+        key === "arrowleft" || key === "a" || key === "f" || 
+        key === "i" || key === "h") {
+        e.preventDefault();
+    }
+    
     if (key === " " || key === "enter" || key === "arrowright") siguienteDialogo();
     if (key === "arrowleft") dialogoAnterior();
     if (key === "a") toggleAuto();
+    if (key === "f") toggleFullScreen();
+    if (key === "i") abrirModalInfo();
+    if (key === "h") abrirModalHistorial();
 });
 
 textoBox.addEventListener("click", (e) => {

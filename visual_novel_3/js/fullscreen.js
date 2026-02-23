@@ -51,7 +51,7 @@ async function toggleFullScreen() {
             }
             
             // Actualizar texto del botón
-            document.getElementById('btnFS').textContent = 'SALIR PANTALLA COMPLETA';
+            document.getElementById('fullIcon').src = 'close.svg';
         } else {
             // Salir de pantalla completa
             if (document.exitFullscreen) {
@@ -61,7 +61,7 @@ async function toggleFullScreen() {
                 unlockOrientation();
                 
                 // Actualizar texto del botón
-                document.getElementById('btnFS').textContent = 'PANTALLA COMPLETA';
+                document.getElementById('fullIcon').src = 'fullscreen_2.svg';
             }
         }
     } catch (error) {
@@ -79,6 +79,6 @@ function handleFullscreenChange() {
     if (!document.fullscreenElement) {
         // Si salimos de pantalla completa, desbloquear orientación
         unlockOrientation();
-        document.getElementById('btnFS').textContent = 'PANTALLA COMPLETA';
+            document.getElementById('fullIcon').src = 'fullscreen_2.svg';
     }
 }
